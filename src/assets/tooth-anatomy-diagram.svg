@@ -1,0 +1,63 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#FFFDFB"/>
+  <rect x="318" y="430" width="564" height="224" rx="42" fill="#F4D7C6"/>
+  <rect x="332" y="450" width="536" height="184" rx="34" fill="#F8E4D6"/>
+  <path d="M455 104C476 74 521 54 600 54C679 54 724 74 745 104C766 135 788 170 798 224C807 272 804 315 804 362C804 401 824 451 824 504C824 563 770 622 730 659H470C430 622 376 563 376 504C376 451 396 401 396 362C396 315 393 272 402 224C412 170 434 135 455 104Z" fill="#FEFBF7" stroke="#8C6B67" stroke-width="6"/>
+  <path d="M507 158C526 137 558 124 600 124C642 124 674 137 693 158C711 179 725 206 731 242C737 275 736 303 736 338C736 370 751 409 751 456C751 496 720 545 689 596H511C480 545 449 496 449 456C449 409 464 370 464 338C464 303 463 275 469 242C475 206 489 179 507 158Z" fill="#FCE9A8" stroke="#A9814A" stroke-width="5"/>
+  <path d="M545 219C557 205 576 197 600 197C624 197 643 205 655 219C666 233 676 253 681 281C685 307 684 329 684 356C684 389 694 422 694 455C694 491 671 532 648 575H552C529 532 506 491 506 455C506 422 516 389 516 356C516 329 515 307 519 281C524 253 534 233 545 219Z" fill="#F9B6C2" stroke="#B46875" stroke-width="4"/>
+  <path d="M581 210V592" stroke="#C84F58" stroke-width="7" stroke-linecap="round"/>
+  <path d="M619 210V592" stroke="#4D76C6" stroke-width="7" stroke-linecap="round"/>
+  <path d="M568 255C582 273 592 292 600 315" stroke="#C84F58" stroke-width="4" stroke-linecap="round"/>
+  <path d="M632 255C618 273 608 292 600 315" stroke="#4D76C6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M560 365C575 385 588 410 597 439" stroke="#C84F58" stroke-width="4" stroke-linecap="round"/>
+  <path d="M640 365C625 385 612 410 603 439" stroke="#4D76C6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M472 122C511 92 550 82 600 82C650 82 689 92 728 122" stroke="#8C6B67" stroke-width="5" stroke-linecap="round"/>
+  <path d="M392 379H810" stroke="#B85F69" stroke-width="6" stroke-linecap="round"/>
+  <path d="M510 597C489 558 474 523 468 493C463 470 462 444 462 418" stroke="#A9814A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M690 597C711 558 726 523 732 493C737 470 738 444 738 418" stroke="#A9814A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M532 647C541 606 550 570 560 538C571 503 581 476 592 450" stroke="#9A6A58" stroke-width="5" stroke-linecap="round"/>
+  <path d="M668 647C659 606 650 570 640 538C629 503 619 476 608 450" stroke="#9A6A58" stroke-width="5" stroke-linecap="round"/>
+  <path d="M392 379C410 361 442 351 474 351H726C758 351 790 361 808 379V401H392V379Z" fill="#D79E95"/>
+  <path d="M526 597L600 692L674 597" stroke="#C84F58" stroke-width="7" stroke-linecap="round"/>
+  <path d="M550 597L600 692L650 597" stroke="#4D76C6" stroke-width="7" stroke-linecap="round" opacity="0.78"/>
+
+  <text x="84" y="132" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">enamelum</text>
+  <path d="M298 122H438" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="438" cy="122" r="5" fill="#2D2A28"/>
+
+  <text x="84" y="182" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">dentinum</text>
+  <path d="M276 172H492" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="492" cy="172" r="5" fill="#2D2A28"/>
+
+  <text x="44" y="238" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">cavitas pulpae</text>
+  <path d="M298 228H544" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="544" cy="228" r="5" fill="#2D2A28"/>
+
+  <text x="108" y="318" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">gingiva</text>
+  <path d="M246 308H390" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="390" cy="308" r="5" fill="#2D2A28"/>
+
+  <text x="12" y="490" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">canalis radicis dentis</text>
+  <path d="M368 480H542" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="542" cy="480" r="5" fill="#2D2A28"/>
+
+  <text x="90" y="566" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">cementum</text>
+  <path d="M246 556H455" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="455" cy="556" r="5" fill="#2D2A28"/>
+
+  <text x="144" y="658" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">nervus</text>
+  <path d="M250 648H530" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="530" cy="648" r="5" fill="#2D2A28"/>
+
+  <text x="846" y="165" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">corona dentis</text>
+  <path d="M812 154H1036" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="812" cy="154" r="5" fill="#2D2A28"/>
+
+  <text x="860" y="345" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">cervix dentis</text>
+  <path d="M812 334H1042" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="812" cy="334" r="5" fill="#2D2A28"/>
+
+  <text x="860" y="490" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500" fill="#2D2A28">radix dentis</text>
+  <path d="M812 478H1008" stroke="#2D2A28" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="812" cy="478" r="5" fill="#2D2A28"/>
+</svg>

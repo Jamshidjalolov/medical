@@ -1,0 +1,1417 @@
+{
+  "exportedAt": "2026-03-26T04:56:59.241Z",
+  "topics": [
+    {
+      "id": "noun-five-declensions",
+      "title": "Otning 5 ta turlanishi",
+      "description": "Lotin tilidagi I, II, III, IV va V turlanishlarni qoidasi hamda tibbiy terminlar misolida o'rganing.",
+      "glyph": "5D",
+      "palette": {
+        "from": "#E0F2FE",
+        "to": "#DBEAFE",
+        "highlight": "#BFDBFE",
+        "ink": "#0F172A"
+      },
+      "image": "https://www.sourcesplash.com/i/random?w=1280&h=860&q=latin%20grammar%20declension%20chart%20textbook&v=1",
+      "fallbackImage": null,
+      "sortOrder": 0,
+      "learnItems": [
+        {
+          "id": "noun-five-declensions-item-1",
+          "title": "I turlanish",
+          "description": "Qoidasi:\nBosh kelishikda odatda -a, qaratqich kelishigida -ae qo'shimchasini oladi. Asosan jenskiy roddagi otlar kiradi.\n\nMisollar:\nala, ae, f - qanot\nvena, ae, f - vena qon tomiri\naorta, ae, f - shox tomir\nvertebra, ae, f - umurtqa\narteria, ae, f - arteriya qon tomiri\npatella, ae, f - tizza qopqog'i\nconcha, ae, f - chig'anoq\nsutura, ae, f - chok\ncosta, ae, f - qovurg'a\ntuba, ae, f - nay, truba\ncrista, ae, f - qirra\nbucca, ae, f - lunj\nlamina, ae, f - plastinka\ngingiva, ae, f - milk\nlingua, ae, f - til\nlingula, ae, f - tilcha\norbita, ae, f - ko'z kosasi\npapilla, ae, f - so'rg'ich\nprotuberantia, ae, f - bo'rtma\ncorona, ae, f - toj\naqua, ae, f - suv\nscapula, ae, f - kurak\nbursa, ae, f - xalta\nvalvula, ae, f - qopqoq\npleura, ae, f - parda\nvena portae - darvoza venasi\nmaxilla, ae, f - yuqori jag'\ntibia, ae, f - katta boldir suyagi\nmandibula, ae, f - pastki jag'\nfibula, ae, f - kichik boldir suyagi\nspina, ae, f - qirra\npulpa, ae, f - tish pulpasi\nincisura, ae, f - o'yma\ncolumna, ae, f - pog'ona\ncellula, ae, f - hujayra\nlacrima, ae, f - ko'z yoshi\nglandula, ae, f - bez\nampulla, ae, f - ampula\nporta, ae, f - darvoza\nvita, ae, f - hayot\ncella, ae, f - hujayra\nurina, ae, f - siydik\nmembrana, ae, f - parda\ntunica, ae, f - qobiq, parda\nlamella, ae, f - plastinka\nplica, ae, f - qatlam\nvesica, ae, f - pufak\nvagina, ae, f - qin\nlinea, ae, f - chiziq\nfibra, ae, f - tola\nmucosa, ae, f - shilliq\nflexura, ae, f - egilish\nconjunctiva, ae, f - ko'z shilliq pardasi\nurethra, ae, f - siydik chiqarish kanali\nfissura, ae, f - yoriq, tirqish\nfovea, ae, f - chuqurcha",
+          "quizQuestion": "Bosh kelishikda -a, qaratqich kelishigida -ae qo'shimchasini oladigan jenskiy roddagi otlar qaysi turlanishga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20grammar%20chart%20anatomy%20textbook%20medical%20terminology%20notes&v=101",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin grammar chart",
+            "anatomy textbook",
+            "medical terminology notes"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "noun-five-declensions-item-2",
+          "title": "II turlanish",
+          "description": "Qoidasi:\nBosh kelishikda mujskoy rodda -us, -er, sredniy rodda -um va ayrim hollarda -on qo'shimchalarini oladi. Qaratqich kelishigida -i qo'shimchasini oladi.\n\nMisollar:\nangulus, i, m - burchak\ndigitus, i, m - barmoq\ntuberculum, i, n - do'mboqcha\nacromion, i, n - kurak o'simtasi\nbrachium, i, n - yelka\nhumerus, i, m - yelka suyagi\ncavum, i, n - bo'shliq\nmanubrium, i, n - tutqich, dasta\ncranium, i, n - kalla suyagi\nradius, i, m - bilak suyagi\nligamentum, i, n - boylam\nsternum, i, n - to'sh\nmusculus, i, m - mushak\nalveolus, i, m - alveola, yacheyka\nseptum, i, n - to'siq\nfrenulum, i, n - yugan\nsulcus, i, m - egat\ntympanum, i, n - nog'ora parda\nlabium, i, n - lab\ncalcaneus, i, m - tovon suyagi\noculus, i, m - ko'z\nbronchus, i, m - bronx\nnodus, i, m - tugun\nlobus, i, m - bo'lak\nnasus, i, m - burun\ndentinum, i, n - dentin\nenamelum, i, n - emal\ncaninus, i, m - qoziq tish\nincisivus, i, m - kesuvchi tish\npalatum, i, n - tanglay\ncerebellum, i, n - miyacha\nnervus, i, m - asab\ncerebrum, i, n - bosh miya\nencephalon, i, n - bosh miya\nganglion, i, n - nerv tuguni\nostium, i, n - teshik\ncollum, i, n - bo'yin\ndorsum, i, n - orqa\ndecoctum, i, n - qaynatma\nglobulus, i, m - sharcha\naegrotus, i, m - bemor\nilium, i, n - yonbosh suyagi\norganum, i, n - a'zo\nnitrogenium, i, n - azot\naluminium, i, n - aluminiy\nammonium, i, n - ammoniy\nmedicamentum, i, n - dori\nsacrum, i, n - dumg'aza\nintestinum, i, n - ichak\ncentrum, i, n - markaz\nbulbus, i, m - piyozcha\ntruncus, i, m - tana, gavda\nrectum, i, n - to'g'ri ichak\nreticulum, i, n - to'r\nsaccharum, i, n - shakar\nvitaminium, i, n - vitamin\ncolon, i, n - yo'g'on ichak\nventriculus, i, m - oshqozon\nduodenum, i, n - o'n ikki barmoq ichak\nanus, i, m - orqa kanal\ncrassum, i, n - yo'g'on ichak\noesophagus, i, m - qizilo'ngach\njejunum, i, n - ingichka ichak\nperitonaeum, i, n - qorin bo'shlig'i\novarium, i, n - tuxumdon\nuterus, i, m - bachadon\ncaecum, i, n - ko'richak\ngyrus, i, m - burma\nfolium, i, n - barg",
+          "quizQuestion": "Bosh kelishikda -us, -er, -um bilan, qaratqich kelishigida esa -i bilan keladigan otlar qaysi turlanishga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20language%20book%20medical%20latin%20lesson%20anatomy%20notes&v=102",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin language book",
+            "medical latin lesson",
+            "anatomy notes"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "noun-five-declensions-item-3",
+          "title": "III turlanish",
+          "description": "Qoidasi:\nBosh kelishikda turlicha qo'shimchalar bilan keladi, qaratqich kelishigida esa uchala rodda ham -is qo'shimchasini oladi.\n\nMisollar:\nflos, floris, m - gul\ncorpus, oris, n - tana\nforamen, inis, n - teshik\nos, ossis, n - suyak\ncrus, cruris, n - oyoq, oyoqcha\npulmo, onis, m - o'pka\ncaput, itis, n - bosh, boshcha\ncartilago, onis, f - tog'ay\nbasis, is, f - asos\nabdomen, inis, n - qorin",
+          "quizQuestion": "Qaratqich kelishigida -is qo'shimchasini oladigan, bosh kelishikda esa turlicha tugaydigan otlar qaysi turlanishga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20noun%20table%20grammar%20textbook%20medical%20terminology%20page&v=103",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin noun table",
+            "grammar textbook",
+            "medical terminology page"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "noun-five-declensions-item-4",
+          "title": "IV turlanish",
+          "description": "Qoidasi:\nIV turlanishga mujskoy va sredniy roddagi otlar kiradi. Bosh kelishikda mujskoy rod -us, sredniy rod -u, qaratqich kelishigida esa -us qo'shimchasini oladi.\n\nMisollar:\nductus, us, m - oqim\ngenu, us, n - tizza\narcus, us, m - yoy, ravoq\nprocessus, us, m - o'simta\ncornu, us, n - shox\nsinus, us, n - bo'shliq\nplexus, us, m - chigal\ntextus, us, m - to'qima\nmeatus, us, m - yo'l, yo'lak\nmanus, us, n - qo'l\nrecessus, us, m - chuqurlik, cho'ntak\ntractus, us, m - yo'l\nhiatus, us, m - yoriq\ngustus, us, m - ta'm\nabscessus, us, m - abstsess\nspiritus, us, m - spirt\nexitus, us, m - chiqish, yakun\npulsus, us, m - tomir urishi",
+          "quizQuestion": "Bosh kelishikda -us yoki -u, qaratqich kelishigida esa -us qo'shimchasini oladigan otlar qaysi turlanishga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20declension%20notes%20medical%20latin%20chart%20school%20notebook&v=104",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin declension notes",
+            "medical latin chart",
+            "school notebook"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "noun-five-declensions-item-5",
+          "title": "V turlanish",
+          "description": "Qoidasi:\nV turlanishga asosan jenskiy rod otlari kiradi. Bosh kelishikda -es, qaratqich kelishigida esa -ei qo'shimchasini oladi.\n\nMisollar:\nfacies, ei, f - yuza\nsuperficies, ei, f - yuqori yuza\ndies, ei, f - kun\ncaries, ei, f - kariyes\nrabies, ei, f - quturish\nscabies, ei, f - qichima\nspecies, ei, f - yig'ma",
+          "quizQuestion": "Bosh kelishikda -es, qaratqich kelishigida esa -ei qo'shimchasini oladigan otlar qaysi turlanishga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20textbook%20medical%20dictionary%20classical%20language%20study&v=105",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin textbook",
+            "medical dictionary",
+            "classical language study"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "noun-five-declensions-quiz-1",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-1",
+          "question": "Bosh kelishikda -a, qaratqich kelishigida -ae qo'shimchasini oladigan jenskiy roddagi otlar qaysi turlanishga kiradi?",
+          "options": [
+            "I turlanish",
+            "II turlanish",
+            "III turlanish",
+            "IV turlanish"
+          ],
+          "correctAnswer": "I turlanish",
+          "sortOrder": 0
+        },
+        {
+          "id": "noun-five-declensions-quiz-2",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-2",
+          "question": "Bosh kelishikda -us, -er, -um bilan, qaratqich kelishigida esa -i bilan keladigan otlar qaysi turlanishga kiradi?",
+          "options": [
+            "III turlanish",
+            "II turlanish",
+            "V turlanish",
+            "IV turlanish"
+          ],
+          "correctAnswer": "II turlanish",
+          "sortOrder": 1
+        },
+        {
+          "id": "noun-five-declensions-quiz-3",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-3",
+          "question": "Qaratqich kelishigida -is qo'shimchasini oladigan, bosh kelishikda esa turlicha tugaydigan otlar qaysi turlanishga kiradi?",
+          "options": [
+            "V turlanish",
+            "I turlanish",
+            "III turlanish",
+            "IV turlanish"
+          ],
+          "correctAnswer": "III turlanish",
+          "sortOrder": 2
+        },
+        {
+          "id": "noun-five-declensions-quiz-4",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-4",
+          "question": "Bosh kelishikda -us yoki -u, qaratqich kelishigida esa -us qo'shimchasini oladigan otlar qaysi turlanishga kiradi?",
+          "options": [
+            "II turlanish",
+            "IV turlanish",
+            "V turlanish",
+            "I turlanish"
+          ],
+          "correctAnswer": "IV turlanish",
+          "sortOrder": 3
+        },
+        {
+          "id": "noun-five-declensions-quiz-5",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-5",
+          "question": "Bosh kelishikda -es, qaratqich kelishigida esa -ei qo'shimchasini oladigan otlar qaysi turlanishga kiradi?",
+          "options": [
+            "V turlanish",
+            "I turlanish",
+            "II turlanish",
+            "III turlanish"
+          ],
+          "correctAnswer": "V turlanish",
+          "sortOrder": 4
+        },
+        {
+          "id": "noun-five-declensions-quiz-6",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-1",
+          "question": "Qaratqich kelishigida -ae qo'shimchasini oladigan otlar odatda qaysi turlanishga mansub bo'ladi?",
+          "options": [
+            "I turlanish",
+            "III turlanish",
+            "IV turlanish",
+            "V turlanish"
+          ],
+          "correctAnswer": "I turlanish",
+          "sortOrder": 5
+        },
+        {
+          "id": "noun-five-declensions-quiz-7",
+          "topicId": "noun-five-declensions",
+          "topicTitle": "Otning 5 ta turlanishi",
+          "learningItemId": "noun-five-declensions-item-5",
+          "question": "Qaratqich kelishigida -ei qo'shimchasi uchrasa, bu ot qaysi turlanishga kiradi?",
+          "options": [
+            "II turlanish",
+            "III turlanish",
+            "IV turlanish",
+            "V turlanish"
+          ],
+          "correctAnswer": "V turlanish",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "noun-third-declension",
+      "title": "Otning 3-turlanishi",
+      "description": "Uchinchi turlanishdagi otlarni mujskoy, jenskiy, sredniy rod va istisno so'zlar asosida o'rganing.",
+      "glyph": "3D",
+      "palette": {
+        "from": "#EDE9FE",
+        "to": "#DDD6FE",
+        "highlight": "#C4B5FD",
+        "ink": "#312E81"
+      },
+      "image": "https://www.sourcesplash.com/i/random?w=1280&h=860&q=latin%20third%20declension%20grammar%20chart%20textbook&v=2",
+      "fallbackImage": null,
+      "sortOrder": 1,
+      "learnItems": [
+        {
+          "id": "noun-third-declension-item-1",
+          "title": "Mujskoy rod",
+          "description": "Qoidasi:\nIII turlanishdagi mujskoy rod otlar bosh kelishikda turli shaklda keladi, qaratqich kelishigida esa odatda -is, -oris, -onis, -etis kabi ko'rinishlarga ega bo'ladi.\n\nMisollar:\napex, icis, m - uchi (burun, til)\ncortex, icis, m - po'stloq, qobiq\nflos, oris, m - gul\nhomo, inis, m - odam\nliquor, oris, m - orqa miya suyuqligi\nparies, etis, m - devor\npulmo, onis, m - o'pka",
+          "quizQuestion": "Apex, cortex, flos, homo kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20grammar%20chart%20school%20notes%20medical%20terminology%20chart&v=201",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin grammar chart",
+            "school notes",
+            "medical terminology chart"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "noun-third-declension-item-2",
+          "title": "Jenskiy rod",
+          "description": "Qoidasi:\nIII turlanishdagi jenskiy rod otlar ham qaratqich kelishigida -is, -onis, -atis, -idis va shunga o'xshash qo'shimchalarni oladi.\n\nMisollar:\nappendix, icis, f - o'simta\ncarotis, tidis, f - uyqu arteriyasi\narticulatio, onis, f - bo'g'im\nauris, is, f - quloq\nbasis, is, f - asos\ncavitas, atis, f - bo'shliq\ncervix, icis, f - bo'yin, bo'yincha\ncutis, is, f - teri\nfrons, frontis, f - peshona\ngl. parotis, tidis, f - quloq oldi bezi\nmeninx, ngis, f - miya pardasi\npars, partis, f - qism\nradix, icis, f - ildiz\npelvis, is, f - tos, chanoq\npelvis renalis - buyrak jomchasi\npyramis, idis, f - piramida\nregion, onis, f - soha\nsynchondrosis, is, f - sinxondroz\nsymphysis, is, f - birikish\ntuberositas, atis, f - g'adir-budirlik\nbilis, is, f - o't, safro\nextremitas, atis, f - qo'l-oyoq uchi\nimpressio, onis, f - botiqlik\niris, idis, f - ko'zning kamalak pardasi\nlens, lentis, f - ko'z gavhari\nphalanx, ngis, f - panja suyagi\npubes, is, f - qov, qov suyagi",
+          "quizQuestion": "Appendix, auris, basis, radix kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20notebook%20language%20study%20anatomy%20notes&v=202",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin notebook",
+            "language study",
+            "anatomy notes"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "noun-third-declension-item-3",
+          "title": "Istisno so'zlar",
+          "description": "Qoidasi:\nQuyidagi otlar III turlanishda istisno sifatida alohida yod olinadi. Ayrimlari mujskoy, ayrimlari esa sredniy rod bo'lib keladi.\n\nMisollar:\naxis, is, m - o'q, ikkinchi bo'yin umurtqasi\ncanalis, is, m - kanal\ndens, dentis, m - tish\nmargo, inis, m - chet\nsanguis, inis, m - qon\ntendo, inis, m - pay\npancreas, atis, n - me'da osti bezi\nvas, vasis, n - tomir\ncoccyx, ygis, m - dum\nfornix, icis, m - gumbaz\nlarynx, ngis, m - hiqildoq\npharynx, ngis, m - halqum\nthorax, acis, m - ko'krak qafasi",
+          "quizQuestion": "Axis, dens, thorax, larynx kabi alohida yod olinadigan otlar III turlanishda qanday guruhga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20declension%20table%20grammar%20lesson%20medical%20latin%20vocabulary&v=203",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin declension table",
+            "grammar lesson",
+            "medical latin vocabulary"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "noun-third-declension-item-4",
+          "title": "Sredniy rod",
+          "description": "Qoidasi:\nIII turlanishdagi sredniy rod otlar bosh kelishikda turli shaklda bo'ladi, qaratqich kelishigida esa odatda -inis, -oris, -atis, -eris, -aris kabi qo'shimchalarni oladi.\n\nMisollar:\nabdomen, inis, n - qorin\ncaput, itis, n - bosh\ncorpus, oris, n - tana\ndiaphragma, atis, n - diafragma\nforamen, inis, n - teshik\nneoplasma, atis, n - neoplazma\nhepar, atis, n - jigar\nocciput, itis, n - ensa\npectus, oris, n - ko'krak\nsinciput, itis, n - boshning old qismi\nstroma, atis, n - tayanch\ntempus, oris, n - chakka\ntegmen, inis, n - qopqoq\nzygoma, atis, n - yonoq\nviscus, eris, n - ichki organlar\nchiasma, atis, n - kesishma\nfemur, oris, n - son\nglomus, eris, n - to'pcha\nsystema, atis, n - tizim\ncoma, atis, n - koma\ncrus, cruris, n - oyoqcha\nthenar, aris, n - thenar\ncalcar, aris, n - tovon tirnog'i, shpora\nsal, salis, n - tuz\nanimal, alis, n - hayvon\nrete, retis, n - to'r",
+          "quizQuestion": "Abdomen, corpus, foramen, rete kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20chart%20study%20table%20medical%20anatomy%20terms&v=204",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin chart",
+            "study table",
+            "medical anatomy terms"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "noun-third-declension-item-5",
+          "title": "Sredniy rod istisnolari",
+          "description": "Qoidasi:\nQuyidagi otlar shaklan III turlanishga mansub bo'lsa ham, jinsini alohida eslab qolish kerak bo'lgan istisno so'zlardir.\n\nMisollar:\nren, renis, m - buyrak\nlien, lienis, m - taloq",
+          "quizQuestion": "Ren va lien kabi alohida eslab qolinadigan otlar III turlanishda qaysi guruhga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20grammar%20page%20lecture%20notes%20medical%20dictionary&v=205",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin grammar page",
+            "lecture notes",
+            "medical dictionary"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "noun-third-declension-quiz-1",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-1",
+          "question": "Apex, cortex, flos, homo kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "options": [
+            "Mujskoy rod",
+            "Jenskiy rod",
+            "Istisno so'zlar",
+            "Sredniy rod"
+          ],
+          "correctAnswer": "Mujskoy rod",
+          "sortOrder": 0
+        },
+        {
+          "id": "noun-third-declension-quiz-2",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-2",
+          "question": "Appendix, auris, basis, radix kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "options": [
+            "Istisno so'zlar",
+            "Jenskiy rod",
+            "Sredniy rod istisnolari",
+            "Sredniy rod"
+          ],
+          "correctAnswer": "Jenskiy rod",
+          "sortOrder": 1
+        },
+        {
+          "id": "noun-third-declension-quiz-3",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-3",
+          "question": "Axis, dens, thorax, larynx kabi alohida yod olinadigan otlar III turlanishda qanday guruhga kiradi?",
+          "options": [
+            "Sredniy rod istisnolari",
+            "Mujskoy rod",
+            "Istisno so'zlar",
+            "Sredniy rod"
+          ],
+          "correctAnswer": "Istisno so'zlar",
+          "sortOrder": 2
+        },
+        {
+          "id": "noun-third-declension-quiz-4",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-4",
+          "question": "Abdomen, corpus, foramen, rete kabi otlar III turlanishning qaysi rodiga kiradi?",
+          "options": [
+            "Jenskiy rod",
+            "Sredniy rod",
+            "Sredniy rod istisnolari",
+            "Mujskoy rod"
+          ],
+          "correctAnswer": "Sredniy rod",
+          "sortOrder": 3
+        },
+        {
+          "id": "noun-third-declension-quiz-5",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-5",
+          "question": "Ren va lien kabi alohida eslab qolinadigan otlar III turlanishda qaysi guruhga kiradi?",
+          "options": [
+            "Sredniy rod istisnolari",
+            "Mujskoy rod",
+            "Jenskiy rod",
+            "Istisno so'zlar"
+          ],
+          "correctAnswer": "Sredniy rod istisnolari",
+          "sortOrder": 4
+        },
+        {
+          "id": "noun-third-declension-quiz-6",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-2",
+          "question": "Pelvis, radix va auris kabi otlar III turlanishning qaysi rodida o'rganiladi?",
+          "options": [
+            "Mujskoy rod",
+            "Jenskiy rod",
+            "Sredniy rod",
+            "Istisno so'zlar"
+          ],
+          "correctAnswer": "Jenskiy rod",
+          "sortOrder": 5
+        },
+        {
+          "id": "noun-third-declension-quiz-7",
+          "topicId": "noun-third-declension",
+          "topicTitle": "Otning 3-turlanishi",
+          "learningItemId": "noun-third-declension-item-4",
+          "question": "Corpus, foramen va rete kabi otlar III turlanishning qaysi guruhiga kiradi?",
+          "options": [
+            "Jenskiy rod",
+            "Mujskoy rod",
+            "Sredniy rod",
+            "Sredniy rod istisnolari"
+          ],
+          "correctAnswer": "Sredniy rod",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "adjective-groups",
+      "title": "Sifatning 1 va 2 guruhlari",
+      "description": "I va II guruh sifatlarini leksik minimum, qoida va tibbiy misollar bilan o'rganing.",
+      "glyph": "SF",
+      "palette": {
+        "from": "#FEF3C7",
+        "to": "#FED7AA",
+        "highlight": "#FDE68A",
+        "ink": "#7C2D12"
+      },
+      "image": "https://www.sourcesplash.com/i/random?w=1280&h=860&q=latin%20adjectives%20grammar%20book%20study%20notes&v=3",
+      "fallbackImage": null,
+      "sortOrder": 2,
+      "learnItems": [
+        {
+          "id": "adjective-groups-item-1",
+          "title": "I guruh sifatlari",
+          "description": "Qoidasi:\nI guruh sifatlari odatda -us, -a, -um shaklida keladi. Ayrimlari -er, -a, -um yoki -ter, -tra, -trum ko'rinishida ham uchraydi.\n\nMisollar:\ncavus, a, um - bo'sh, kovak\ncutaneus, a, um - teriga oid\nischiadicus, a, um - quymichga oid\nlatus, a, um - keng\nprofundus, a, um - chuqur\nmastoideus, a, um - so'rg'ichsimon\nhyoideus, a, um - til osti suyagiga oid\ncaninus, a, um - katta oziq tishga oid\nhypoglossus, a, um - til osti nerviga oid\nsubmucosus, a, um - shilliq parda osti\ngeniohyoideus, a, um - iyak-til osti\nstylohyoideus, a, um - bigizsimon-til osti\nstylopharyngeus, a, um - halqumga oid\ninfrahyoideus, a, um - til osti ostidagi\nserotinus, a, um - kechki, aql\npalatinus, a, um - tanglayga oid",
+          "quizQuestion": "Cavus, cutaneus, ischiadicus kabi -us, -a, -um shaklidagi sifatlar qaysi guruhga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20grammar%20adjective%20table%20medical%20terminology%20notes&v=301",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin grammar",
+            "adjective table",
+            "medical terminology notes"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "adjective-groups-item-2",
+          "title": "I guruh rang va belgi sifatlari",
+          "description": "Qoidasi:\nI guruhda rang, o'lcham, sifat va umumiy belgini ifodalovchi ko'plab sifatlar uchraydi.\n\nMisollar:\nalbus, a, um - oq\nniger, gra, grum - qora\nflavus, a, um - sariq\nruber, bra, brum - qizil\nlongus, a, um - uzun\nmagnus, a, um - katta\nparvus, a, um - kichik\naltus, a, um - baland\ndurus, a, um - qattiq\ncalidus, a, um - issiq\nfrigidus, a, um - sovuq\nrectus, a, um - to'g'ri\nbonus, a, um - yaxshi\nmalus, a, um - yomon\npurus, a, um - toza\nrotundus, a, um - yumaloq\ncoeruleus, a, um - ko'k\ncinereus, a, um - kul rang\namarus, a, um - achchiq\nacutus, a, um - o'tkir",
+          "quizQuestion": "Albus, niger, flavus, ruber kabi rang va belgi bildiruvchi sifatlar qaysi guruhga mansub?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20adjective%20chart%20study%20book%20color%20theory%20notes&v=302",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin adjective chart",
+            "study book",
+            "color theory notes"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "adjective-groups-item-3",
+          "title": "I guruh anatomik sifatlar",
+          "description": "Qoidasi:\nI guruh sifatlar ichida anatomiya va tibbiyotda ko'p ishlatiladigan yo'nalish va tuzilma bildiruvchi sifatlar ham bor.\n\nMisollar:\nlaryngeus, a, um - hiqildoqqa oid\npharyngeus, a, um - halqumga oid\noesophageus, a, um - qizilo'ngachga oid\ndexter, tra, trum - o'ng\nsinister, tra, trum - chap\nobliquus, a, um - qiyshiq, egri\nosseus, a, um - suyakka oid\npalatinus, a, um - tanglayga oid\nthoracicus, a, um - ko'krakka oid\nthyreoideus, a, um - qalqonsimon\ntransversus, a, um - ko'ndalang\ndurus, a, um - qattiq\nniger, gra, grum - qora",
+          "quizQuestion": "Laryngeus, thoracicus, thyreoideus kabi anatomiya terminlarida uchraydigan sifatlar ko'proq qaysi guruhga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20textbook%20anatomy%20terminology%20language%20notes&v=303",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin textbook",
+            "anatomy terminology",
+            "language notes"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "adjective-groups-item-4",
+          "title": "II guruh sifatlari",
+          "description": "Qoidasi:\nII guruh sifatlari ko'proq III turlanishga yaqin tuslanadi. Ko'pchiligi -is, -e yoki -alis, -e hamda -aris, -e shaklida keladi.\n\nMisollar:\nauricularis, e - quloqqa oid\nlacrimalis, e - ko'z yoshiga oid\ndorsalis, e - orqaga oid\nlingualis, e - tilga oid\nfacialis, e - yuzaga oid\nventralis, e - oldingi\nsuperficialis, e - yuzaki\nproximalis, e - tanaga yaqin\ndistalis, e - tanadan uzoq\nhorizontalis, e - gorizontal, eniga\nlumbalis, e - belga oid\nnasalis, e - burunga oid\ntemporalis, e - chakkaga oid\noccipitalis, e - ensaga oid\nmaxillaris, e - yuqori jag'ga oid\nmandibularis, e - pastki jag'ga oid\nintestinalis, e - ichakka oid\ntenuis, e - ingichka\nvaginalis, e - qinga oid\nbrevis, e - qisqa\nmollis, e - yumshoq\ncranialis, e - kallaga oid\ndentalis, e - tishga oid\ncardialis, e - yurakka oid\npulmonalis, e - o'pkaga oid\nrenalis, e - buyrakka oid\nabdominalis, e - qoringa oid\nbrachialis, e - yelkaga oid\nhumeralis, e - yelka suyagiga oid\nradialis, e - bilakka oid\nulnaris, e - tirsakka oid",
+          "quizQuestion": "Auricularis, dorsalis, facialis, dentalis kabi -is, -e shaklidagi sifatlar qaysi guruhga kiradi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20adjective%20medical%20latin%20list%20book%20page&v=304",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin adjective",
+            "medical latin list",
+            "book page"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "adjective-groups-item-5",
+          "title": "II guruh maxsus shakllari",
+          "description": "Qoidasi:\nII guruhda ayrim sifatlar nominativda maxsus ko'rinishda keladi va lug'atda genitiv shakli orqali yodlanadi.\n\nMisollar:\nsimplex, icis - oddiy\ntriceps, itis - uch boshli\nteres, es - aylana\nbiceps, itis - ikki boshli\nquadriceps, itis - to'rt boshli\nalaris, e - qanotga oid\ncerebralis, e - miyaga oid\ncervicalis, e - bo'yinga tegishli\nfrontalis, e - peshonaga oid\nmandibularis, e - pastki jag'ga oid\nnasalis, e - burunga oid\noccipitalis, e - ensaga oid\norbitalis, e - ko'z kosasiga oid\nbuccalis, e - lunjga oid\ndentalis, e - tishga oid\nmentalis, e - iyakka oid",
+          "quizQuestion": "Simplex, triceps, biceps, quadriceps kabi maxsus shakldagi sifatlar qaysi guruhda o'rganiladi?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=latin%20grammar%20table%20school%20study%20anatomy%20adjective%20chart&v=305",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "latin grammar table",
+            "school study",
+            "anatomy adjective chart"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "adjective-groups-quiz-1",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-1",
+          "question": "Cavus, cutaneus, ischiadicus kabi -us, -a, -um shaklidagi sifatlar qaysi guruhga kiradi?",
+          "options": [
+            "I guruh sifatlari",
+            "I guruh rang va belgi sifatlari",
+            "I guruh anatomik sifatlar",
+            "II guruh sifatlari"
+          ],
+          "correctAnswer": "I guruh sifatlari",
+          "sortOrder": 0
+        },
+        {
+          "id": "adjective-groups-quiz-2",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-2",
+          "question": "Albus, niger, flavus, ruber kabi rang va belgi bildiruvchi sifatlar qaysi guruhga mansub?",
+          "options": [
+            "I guruh anatomik sifatlar",
+            "I guruh rang va belgi sifatlari",
+            "II guruh maxsus shakllari",
+            "II guruh sifatlari"
+          ],
+          "correctAnswer": "I guruh rang va belgi sifatlari",
+          "sortOrder": 1
+        },
+        {
+          "id": "adjective-groups-quiz-3",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-3",
+          "question": "Laryngeus, thoracicus, thyreoideus kabi anatomiya terminlarida uchraydigan sifatlar ko'proq qaysi guruhga kiradi?",
+          "options": [
+            "II guruh maxsus shakllari",
+            "I guruh sifatlari",
+            "I guruh anatomik sifatlar",
+            "II guruh sifatlari"
+          ],
+          "correctAnswer": "I guruh anatomik sifatlar",
+          "sortOrder": 2
+        },
+        {
+          "id": "adjective-groups-quiz-4",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-4",
+          "question": "Auricularis, dorsalis, facialis, dentalis kabi -is, -e shaklidagi sifatlar qaysi guruhga kiradi?",
+          "options": [
+            "I guruh rang va belgi sifatlari",
+            "II guruh sifatlari",
+            "II guruh maxsus shakllari",
+            "I guruh sifatlari"
+          ],
+          "correctAnswer": "II guruh sifatlari",
+          "sortOrder": 3
+        },
+        {
+          "id": "adjective-groups-quiz-5",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-5",
+          "question": "Simplex, triceps, biceps, quadriceps kabi maxsus shakldagi sifatlar qaysi guruhda o'rganiladi?",
+          "options": [
+            "II guruh maxsus shakllari",
+            "I guruh sifatlari",
+            "I guruh rang va belgi sifatlari",
+            "I guruh anatomik sifatlar"
+          ],
+          "correctAnswer": "II guruh maxsus shakllari",
+          "sortOrder": 4
+        },
+        {
+          "id": "adjective-groups-quiz-6",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-2",
+          "question": "Bonus, malus, magnus va longus kabi sifatlar qaysi bo'limda ko'proq uchraydi?",
+          "options": [
+            "I guruh rang va belgi sifatlari",
+            "I guruh anatomik sifatlar",
+            "II guruh sifatlari",
+            "II guruh maxsus shakllari"
+          ],
+          "correctAnswer": "I guruh rang va belgi sifatlari",
+          "sortOrder": 5
+        },
+        {
+          "id": "adjective-groups-quiz-7",
+          "topicId": "adjective-groups",
+          "topicTitle": "Sifatning 1 va 2 guruhlari",
+          "learningItemId": "adjective-groups-item-4",
+          "question": "-is, -e shaklidagi sifatlar odatda qaysi guruh sifatlari hisoblanadi?",
+          "options": [
+            "I guruh sifatlari",
+            "I guruh anatomik sifatlar",
+            "II guruh sifatlari",
+            "I guruh rang va belgi sifatlari"
+          ],
+          "correctAnswer": "II guruh sifatlari",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "tooth-anatomy",
+      "title": "Tish anatomiyasi va qavatlari",
+      "description": "Tishning lotincha anatomik atamalari, qavatlari, ildiz tuzilmalari va tish turlarini o'rganing.",
+      "glyph": "TA",
+      "palette": {
+        "from": "#DCFCE7",
+        "to": "#BFDBFE",
+        "highlight": "#FDE68A",
+        "ink": "#14532D"
+      },
+      "image": "/assets/tooth-anatomy-diagram.svg",
+      "fallbackImage": "/assets/tooth-anatomy-diagram.svg",
+      "sortOrder": 3,
+      "learnItems": [
+        {
+          "id": "tooth-anatomy-item-1",
+          "title": "Tishning asosiy qismlari",
+          "description": "Asosiy atamalar:\ndens - tish\ncorona dentis - tish toji\ncervix dentis - tish bo'yni\nradix dentis - tish ildizi",
+          "quizQuestion": "Dens, corona dentis, cervix dentis va radix dentis qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=tooth%20crown%20anatomy&v=401",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "tooth crown anatomy"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "tooth-anatomy-item-2",
+          "title": "Tishning ichki qavatlari",
+          "description": "Asosiy atamalar:\npulpa dentis - tish pulpasi\ndentinum - dentin\nenamelum - emal\ncementum - sement qavati",
+          "quizQuestion": "Pulpa dentis, dentinum, enamelum va cementum qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=tooth%20enamel%20anatomy&v=402",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "tooth enamel anatomy"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "tooth-anatomy-item-3",
+          "title": "Ildiz tuzilmalari",
+          "description": "Asosiy atamalar:\napex radicis - ildiz uchi\ncanalis radicis - ildiz kanali",
+          "quizQuestion": "Apex radicis va canalis radicis qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=tooth%20root%20anatomy&v=403",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "tooth root anatomy"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "tooth-anatomy-item-4",
+          "title": "Yordamchi tuzilmalar",
+          "description": "Asosiy atamalar:\nligamentum periodontale - periodont boylami\ngingiva - milk\nnervus - nerv",
+          "quizQuestion": "Ligamentum periodontale, gingiva va nervus qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=periodontal%20ligament%20gingiva&v=404",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "periodontal ligament gingiva"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "tooth-anatomy-item-5",
+          "title": "Tish turlari",
+          "description": "Tish turlari va tuzilmalari:\ndens incisivus - kurak tish\ndens caninus - qoziq tish\ndens premolaris - kichik oziq tish\ndens molaris - katta oziq tish\ndens deciduus - sut tishi\ndens permanens - doimiy tish\ndens serotinus - kech chiqadigan tish, aql tish\narcus dentalis - tish yoyi\ndens molaris tertius - uchinchi molyar tish, aql tish",
+          "quizQuestion": "Dens incisivus, dens caninus, dens premolaris, dens molaris va boshqa tish turlari qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=wisdom%20tooth%20dental%20arch&v=405",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "wisdom tooth dental arch"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "tooth-anatomy-quiz-1",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-1",
+          "question": "Dens, corona dentis, cervix dentis va radix dentis qaysi bo'limda berilgan?",
+          "options": [
+            "Tishning asosiy qismlari",
+            "Tishning ichki qavatlari",
+            "Ildiz tuzilmalari",
+            "Yordamchi tuzilmalar"
+          ],
+          "correctAnswer": "Tishning asosiy qismlari",
+          "sortOrder": 0
+        },
+        {
+          "id": "tooth-anatomy-quiz-2",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-2",
+          "question": "Pulpa dentis, dentinum, enamelum va cementum qaysi bo'limda berilgan?",
+          "options": [
+            "Ildiz tuzilmalari",
+            "Tishning ichki qavatlari",
+            "Tish turlari",
+            "Yordamchi tuzilmalar"
+          ],
+          "correctAnswer": "Tishning ichki qavatlari",
+          "sortOrder": 1
+        },
+        {
+          "id": "tooth-anatomy-quiz-3",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-3",
+          "question": "Apex radicis va canalis radicis qaysi bo'limda berilgan?",
+          "options": [
+            "Tish turlari",
+            "Tishning asosiy qismlari",
+            "Ildiz tuzilmalari",
+            "Yordamchi tuzilmalar"
+          ],
+          "correctAnswer": "Ildiz tuzilmalari",
+          "sortOrder": 2
+        },
+        {
+          "id": "tooth-anatomy-quiz-4",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-4",
+          "question": "Ligamentum periodontale, gingiva va nervus qaysi bo'limda berilgan?",
+          "options": [
+            "Tishning ichki qavatlari",
+            "Yordamchi tuzilmalar",
+            "Tish turlari",
+            "Tishning asosiy qismlari"
+          ],
+          "correctAnswer": "Yordamchi tuzilmalar",
+          "sortOrder": 3
+        },
+        {
+          "id": "tooth-anatomy-quiz-5",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-5",
+          "question": "Dens incisivus, dens caninus, dens premolaris, dens molaris va boshqa tish turlari qaysi bo'limda berilgan?",
+          "options": [
+            "Tish turlari",
+            "Tishning asosiy qismlari",
+            "Tishning ichki qavatlari",
+            "Ildiz tuzilmalari"
+          ],
+          "correctAnswer": "Tish turlari",
+          "sortOrder": 4
+        },
+        {
+          "id": "tooth-anatomy-quiz-6",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-2",
+          "question": "Enamelum va cementum kabi atamalar tishning qaysi bo'limida berilgan?",
+          "options": [
+            "Tishning asosiy qismlari",
+            "Tishning ichki qavatlari",
+            "Ildiz tuzilmalari",
+            "Yordamchi tuzilmalar"
+          ],
+          "correctAnswer": "Tishning ichki qavatlari",
+          "sortOrder": 5
+        },
+        {
+          "id": "tooth-anatomy-quiz-7",
+          "topicId": "tooth-anatomy",
+          "topicTitle": "Tish anatomiyasi va qavatlari",
+          "learningItemId": "tooth-anatomy-item-3",
+          "question": "Apex radicis va canalis radicis atamalari qaysi bo'limga tegishli?",
+          "options": [
+            "Tish turlari",
+            "Yordamchi tuzilmalar",
+            "Ildiz tuzilmalari",
+            "Tishning asosiy qismlari"
+          ],
+          "correctAnswer": "Ildiz tuzilmalari",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "oral-cavity",
+      "title": "Og'iz bo'shlig'i",
+      "description": "Og'iz bo'shlig'ining lotincha anatomik atamalari va asosiy tuzilmalarini bo'limlar asosida o'rganing.",
+      "glyph": "OB",
+      "palette": {
+        "from": "#FEE2E2",
+        "to": "#FBCFE8",
+        "highlight": "#FDE68A",
+        "ink": "#7F1D1D"
+      },
+      "image": "/rasm/ogiz.png",
+      "fallbackImage": "/rasm/ogiz.png",
+      "sortOrder": 4,
+      "learnItems": [
+        {
+          "id": "oral-cavity-item-1",
+          "title": "Og'iz bo'shlig'ining asosiy atamalari",
+          "description": "Asosiy atamalar:\ncavitas oris - og'iz bo'shlig'i\ngingiva - milk\nalveolus dentis - tish katagi, alveolasi",
+          "quizQuestion": "Cavitas oris, gingiva va alveolus dentis qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=oral%20cavity%20anatomy&v=501",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "oral cavity anatomy"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "oral-cavity-item-2",
+          "title": "Tanglay tuzilmalari",
+          "description": "Asosiy atamalar:\npalatum - tanglay\npalatum durum - qattiq tanglay\npalatum molle - yumshoq tanglay\nuvula - tilcha",
+          "quizQuestion": "Palatum, palatum durum, palatum molle va uvula qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=hard%20soft%20palate%20anatomy&v=502",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "hard soft palate anatomy"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "oral-cavity-item-3",
+          "title": "Til, lab va lunj",
+          "description": "Asosiy atamalar:\nlingua - til\nlabium - lab\nlabium superius - yuqori lab\nlabium inferius - pastki lab\nbucca - lunj",
+          "quizQuestion": "Lingua, labium, labium superius, labium inferius va bucca qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=tongue%20lips%20cheeks%20anatomy&v=503",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "tongue lips cheeks anatomy"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "oral-cavity-item-4",
+          "title": "Jag' suyaklari va bo'g'im",
+          "description": "Asosiy atamalar:\nmandibula - pastki jag'\nmaxilla - yuqori jag'\narticulatio temporomandibularis - chakka-pastki jag' bo'g'imi",
+          "quizQuestion": "Mandibula, maxilla va articulatio temporomandibularis qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=mandible%20maxilla%20tmj%20anatomy&v=504",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "mandible maxilla tmj anatomy"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "oral-cavity-item-5",
+          "title": "Qo'shimcha tuzilmalar",
+          "description": "Asosiy atamalar:\ntonsilla - bodomcha bez",
+          "quizQuestion": "Tonsilla atamasi qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=tonsil%20anatomy%20mouth&v=505",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "tonsil anatomy mouth"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "oral-cavity-quiz-1",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-1",
+          "question": "Cavitas oris, gingiva va alveolus dentis qaysi bo'limda berilgan?",
+          "options": [
+            "Og'iz bo'shlig'ining asosiy atamalari",
+            "Tanglay tuzilmalari",
+            "Til, lab va lunj",
+            "Jag' suyaklari va bo'g'im"
+          ],
+          "correctAnswer": "Og'iz bo'shlig'ining asosiy atamalari",
+          "sortOrder": 0
+        },
+        {
+          "id": "oral-cavity-quiz-2",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-2",
+          "question": "Palatum, palatum durum, palatum molle va uvula qaysi bo'limda berilgan?",
+          "options": [
+            "Til, lab va lunj",
+            "Tanglay tuzilmalari",
+            "Qo'shimcha tuzilmalar",
+            "Jag' suyaklari va bo'g'im"
+          ],
+          "correctAnswer": "Tanglay tuzilmalari",
+          "sortOrder": 1
+        },
+        {
+          "id": "oral-cavity-quiz-3",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-3",
+          "question": "Lingua, labium, labium superius, labium inferius va bucca qaysi bo'limda berilgan?",
+          "options": [
+            "Qo'shimcha tuzilmalar",
+            "Og'iz bo'shlig'ining asosiy atamalari",
+            "Til, lab va lunj",
+            "Jag' suyaklari va bo'g'im"
+          ],
+          "correctAnswer": "Til, lab va lunj",
+          "sortOrder": 2
+        },
+        {
+          "id": "oral-cavity-quiz-4",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-4",
+          "question": "Mandibula, maxilla va articulatio temporomandibularis qaysi bo'limda berilgan?",
+          "options": [
+            "Tanglay tuzilmalari",
+            "Jag' suyaklari va bo'g'im",
+            "Qo'shimcha tuzilmalar",
+            "Og'iz bo'shlig'ining asosiy atamalari"
+          ],
+          "correctAnswer": "Jag' suyaklari va bo'g'im",
+          "sortOrder": 3
+        },
+        {
+          "id": "oral-cavity-quiz-5",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-5",
+          "question": "Tonsilla atamasi qaysi bo'limda berilgan?",
+          "options": [
+            "Qo'shimcha tuzilmalar",
+            "Og'iz bo'shlig'ining asosiy atamalari",
+            "Tanglay tuzilmalari",
+            "Til, lab va lunj"
+          ],
+          "correctAnswer": "Qo'shimcha tuzilmalar",
+          "sortOrder": 4
+        },
+        {
+          "id": "oral-cavity-quiz-6",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-2",
+          "question": "Uvula va palatum molle qaysi bo'lim tarkibida berilgan?",
+          "options": [
+            "Tanglay tuzilmalari",
+            "Til, lab va lunj",
+            "Qo'shimcha tuzilmalar",
+            "Jag' suyaklari va bo'g'im"
+          ],
+          "correctAnswer": "Tanglay tuzilmalari",
+          "sortOrder": 5
+        },
+        {
+          "id": "oral-cavity-quiz-7",
+          "topicId": "oral-cavity",
+          "topicTitle": "Og'iz bo'shlig'i",
+          "learningItemId": "oral-cavity-item-4",
+          "question": "Mandibula va maxilla qaysi bo'limda birga o'rganiladi?",
+          "options": [
+            "Og'iz bo'shlig'ining asosiy atamalari",
+            "Tanglay tuzilmalari",
+            "Til, lab va lunj",
+            "Jag' suyaklari va bo'g'im"
+          ],
+          "correctAnswer": "Jag' suyaklari va bo'g'im",
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "skull-bones",
+      "title": "Kalla suyagi",
+      "description": "Kalla suyaklari, yuz suyaklari va kalla choklarini lotincha atamalar bilan o'rganing.",
+      "glyph": "KS",
+      "palette": {
+        "from": "#E2E8F0",
+        "to": "#CBD5E1",
+        "highlight": "#BFDBFE",
+        "ink": "#1E293B"
+      },
+      "image": "/rasm/kalla.png",
+      "fallbackImage": "/rasm/kalla.png",
+      "sortOrder": 5,
+      "learnItems": [
+        {
+          "id": "skull-bones-item-1",
+          "title": "Neurocranium",
+          "description": "Kalla suyaklari, Ossa cranii:\nos frontale - peshona suyagi\nos parietale - tepa suyagi\nos temporale - chakka suyagi\nos occipitale - ensa suyagi\nos sphenoidale - ponasimon suyagi\nos ethmoidale - g'alvirsimon suyagi\nprocessus styloideus - bigizsimon o'siq",
+          "quizQuestion": "Os frontale, os parietale, os temporale va boshqa kalla suyaklari qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=neurocranium%20skull%20anatomy&v=601",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "neurocranium skull anatomy"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "skull-bones-item-2",
+          "title": "Viscerocranium",
+          "description": "Yuz suyaklari, Ossa faciei:\nmaxilla - yuqori jag' suyagi\nmandibula - pastki jag' suyagi\nos zygomaticum - yonoq suyagi\nos nasale - burun suyagi\nos lacrimale - ko'z yosh suyagi\nos palatinum - tanglay suyagi\nconcha nasalis inferior - pastki burun chig'anog'i\nvomer - dimog' suyagi\nos hyoideum - til osti suyagi",
+          "quizQuestion": "Maxilla, mandibula, os zygomaticum va boshqa yuz suyaklari qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=viscerocranium%20facial%20bones&v=602",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "viscerocranium facial bones"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "skull-bones-item-3",
+          "title": "Kalla choklari I",
+          "description": "Kalla choklari:\nsutura parietomastoidea - tepa so'rg'ichsimon chok\nsutura occipitomastoidea - ensa so'rg'ichsimon chok\nsutura temporozygomatica - chakka-yonoq choki",
+          "quizQuestion": "Sutura parietomastoidea, sutura occipitomastoidea va sutura temporozygomatica qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=cranial%20sutures%20anatomy&v=603",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "cranial sutures anatomy"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "skull-bones-item-4",
+          "title": "Kalla choklari II",
+          "description": "Kalla choklari:\nsutura zygomaticomaxillaris - yonoq-yuqori jag' choki\nsutura coronalis - tojsimon chok\nsutura frontozygomatica - peshona-yonoq choki",
+          "quizQuestion": "Sutura zygomaticomaxillaris, sutura coronalis va sutura frontozygomatica qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=facial%20skull%20sutures&v=604",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "facial skull sutures"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "skull-bones-item-5",
+          "title": "Kalla choklari III",
+          "description": "Kalla choklari:\nsutura sphenofrontalis - ponasimon peshona choki\nsutura ethmoidolacrimalis - g'alvirsimon ko'zyosh choki\nsutura sphenoparietalis - ponasimon tepa choki",
+          "quizQuestion": "Sutura sphenofrontalis, sutura ethmoidolacrimalis va sutura sphenoparietalis qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=sphenoid%20frontal%20sutures%20skull&v=605",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "sphenoid frontal sutures skull"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "skull-bones-quiz-1",
+          "topicId": "skull-bones",
+          "topicTitle": "Kalla suyagi",
+          "learningItemId": "skull-bones-item-1",
+          "question": "Os frontale, os parietale, os temporale va boshqa kalla suyaklari qaysi bo'limda berilgan?",
+          "options": [
+            "Neurocranium",
+            "Viscerocranium",
+            "Kalla choklari I",
+            "Kalla choklari II"
+          ],
+          "correctAnswer": "Neurocranium",
+          "sortOrder": 0
+        },
+        {
+          "id": "skull-bones-quiz-2",
+          "topicId": "skull-bones",
+          "topicTitle": "Kalla suyagi",
+          "learningItemId": "skull-bones-item-2",
+          "question": "Maxilla, mandibula, os zygomaticum va boshqa yuz suyaklari qaysi bo'limda berilgan?",
+          "options": [
+            "Kalla choklari I",
+            "Viscerocranium",
+            "Kalla choklari III",
+            "Kalla choklari II"
+          ],
+          "correctAnswer": "Viscerocranium",
+          "sortOrder": 1
+        },
+        {
+          "id": "skull-bones-quiz-3",
+          "topicId": "skull-bones",
+          "topicTitle": "Kalla suyagi",
+          "learningItemId": "skull-bones-item-3",
+          "question": "Sutura parietomastoidea, sutura occipitomastoidea va sutura temporozygomatica qaysi bo'limda berilgan?",
+          "options": [
+            "Kalla choklari III",
+            "Neurocranium",
+            "Kalla choklari I",
+            "Kalla choklari II"
+          ],
+          "correctAnswer": "Kalla choklari I",
+          "sortOrder": 2
+        },
+        {
+          "id": "skull-bones-quiz-4",
+          "topicId": "skull-bones",
+          "topicTitle": "Kalla suyagi",
+          "learningItemId": "skull-bones-item-4",
+          "question": "Sutura zygomaticomaxillaris, sutura coronalis va sutura frontozygomatica qaysi bo'limda berilgan?",
+          "options": [
+            "Viscerocranium",
+            "Kalla choklari II",
+            "Kalla choklari III",
+            "Neurocranium"
+          ],
+          "correctAnswer": "Kalla choklari II",
+          "sortOrder": 3
+        },
+        {
+          "id": "skull-bones-quiz-5",
+          "topicId": "skull-bones",
+          "topicTitle": "Kalla suyagi",
+          "learningItemId": "skull-bones-item-5",
+          "question": "Sutura sphenofrontalis, sutura ethmoidolacrimalis va sutura sphenoparietalis qaysi bo'limda berilgan?",
+          "options": [
+            "Kalla choklari III",
+            "Neurocranium",
+            "Viscerocranium",
+            "Kalla choklari I"
+          ],
+          "correctAnswer": "Kalla choklari III",
+          "sortOrder": 4
+        }
+      ]
+    },
+    {
+      "id": "dental-formula",
+      "title": "Yuz mushaklari",
+      "description": "Yuz mimika mushaklarini lotincha nomlari va o'zbekcha ma'nolari bilan bo'limlar asosida o'rganing.",
+      "glyph": "YM",
+      "palette": {
+        "from": "#FCE7F3",
+        "to": "#E0E7FF",
+        "highlight": "#FBCFE8",
+        "ink": "#312E81"
+      },
+      "image": "/rasm/yuz.png",
+      "fallbackImage": "/rasm/yuz.png",
+      "sortOrder": 6,
+      "learnItems": [
+        {
+          "id": "dental-formula-item-1",
+          "title": "Peshona va ko'z atrof mushaklari",
+          "description": "Asosiy atamalar:\nM. occipitofrontalis - peshona-ensa mushagi\nM. orbicularis oculi - ko'z atrofidagi halqasimon mushak\nM. corrugator supercilii - qoshni tirishtiruvchi mushak",
+          "quizQuestion": "M. occipitofrontalis, M. orbicularis oculi va M. corrugator supercilii qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=forehead%20eye%20muscles%20anatomy&v=701",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "forehead eye muscles anatomy"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "dental-formula-item-2",
+          "title": "Burun va yuqori lab mushaklari",
+          "description": "Asosiy atamalar:\nM. procerus - burun usti mushagi\nM. nasalis - burun mushagi\nM. levator labii superioris - yuqori labni ko'taruvchi mushak\nM. levator labii superioris alaeque nasi - yuqori lab va burun qanotini ko'taruvchi mushak",
+          "quizQuestion": "M. procerus, M. nasalis va yuqori labga oid mushaklar qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=nose%20upper%20lip%20muscles%20anatomy&v=702",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "nose upper lip muscles anatomy"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "dental-formula-item-3",
+          "title": "Yonoq va kulgi mushaklari",
+          "description": "Asosiy atamalar:\nM. zygomaticus major - katta yonoq mushagi\nM. zygomaticus minor - kichik yonoq mushagi\nM. risorius - kulgich mushagi\nM. buccinator - lunj mushagi",
+          "quizQuestion": "M. zygomaticus major, M. zygomaticus minor, M. risorius va M. buccinator qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=zygomatic%20risorius%20buccinator%20muscles&v=703",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "zygomatic risorius buccinator muscles"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "dental-formula-item-4",
+          "title": "Og'iz va pastki lab mushaklari",
+          "description": "Asosiy atamalar:\nM. orbicularis oris - og'iz atrofidagi halqasimon mushak\nM. depressor anguli oris - og'iz burchagini tushiruvchi mushak\nM. depressor labii inferioris - pastki labni tushiruvchi mushak",
+          "quizQuestion": "M. orbicularis oris, M. depressor anguli oris va M. depressor labii inferioris qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=mouth%20lower%20lip%20muscles%20anatomy&v=704",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "mouth lower lip muscles anatomy"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "dental-formula-item-5",
+          "title": "Iyak va bo'yin mushaklari",
+          "description": "Asosiy atamalar:\nM. mentalis - iyak mushagi\nPlatysma - bo'yinning teri osti mushagi, yuz mimikasida ham qatnashadi",
+          "quizQuestion": "M. mentalis va Platysma qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=chin%20platysma%20muscles%20anatomy&v=705",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "chin platysma muscles anatomy"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "dental-formula-quiz-1",
+          "topicId": "dental-formula",
+          "topicTitle": "Yuz mushaklari",
+          "learningItemId": "dental-formula-item-1",
+          "question": "M. occipitofrontalis, M. orbicularis oculi va M. corrugator supercilii qaysi bo'limda berilgan?",
+          "options": [
+            "Peshona va ko'z atrof mushaklari",
+            "Burun va yuqori lab mushaklari",
+            "Yonoq va kulgi mushaklari",
+            "Og'iz va pastki lab mushaklari"
+          ],
+          "correctAnswer": "Peshona va ko'z atrof mushaklari",
+          "sortOrder": 0
+        },
+        {
+          "id": "dental-formula-quiz-2",
+          "topicId": "dental-formula",
+          "topicTitle": "Yuz mushaklari",
+          "learningItemId": "dental-formula-item-2",
+          "question": "M. procerus, M. nasalis va yuqori labga oid mushaklar qaysi bo'limda berilgan?",
+          "options": [
+            "Yonoq va kulgi mushaklari",
+            "Burun va yuqori lab mushaklari",
+            "Iyak va bo'yin mushaklari",
+            "Og'iz va pastki lab mushaklari"
+          ],
+          "correctAnswer": "Burun va yuqori lab mushaklari",
+          "sortOrder": 1
+        },
+        {
+          "id": "dental-formula-quiz-3",
+          "topicId": "dental-formula",
+          "topicTitle": "Yuz mushaklari",
+          "learningItemId": "dental-formula-item-3",
+          "question": "M. zygomaticus major, M. zygomaticus minor, M. risorius va M. buccinator qaysi bo'limda berilgan?",
+          "options": [
+            "Iyak va bo'yin mushaklari",
+            "Peshona va ko'z atrof mushaklari",
+            "Yonoq va kulgi mushaklari",
+            "Og'iz va pastki lab mushaklari"
+          ],
+          "correctAnswer": "Yonoq va kulgi mushaklari",
+          "sortOrder": 2
+        },
+        {
+          "id": "dental-formula-quiz-4",
+          "topicId": "dental-formula",
+          "topicTitle": "Yuz mushaklari",
+          "learningItemId": "dental-formula-item-4",
+          "question": "M. orbicularis oris, M. depressor anguli oris va M. depressor labii inferioris qaysi bo'limda berilgan?",
+          "options": [
+            "Burun va yuqori lab mushaklari",
+            "Og'iz va pastki lab mushaklari",
+            "Iyak va bo'yin mushaklari",
+            "Peshona va ko'z atrof mushaklari"
+          ],
+          "correctAnswer": "Og'iz va pastki lab mushaklari",
+          "sortOrder": 3
+        },
+        {
+          "id": "dental-formula-quiz-5",
+          "topicId": "dental-formula",
+          "topicTitle": "Yuz mushaklari",
+          "learningItemId": "dental-formula-item-5",
+          "question": "M. mentalis va Platysma qaysi bo'limda berilgan?",
+          "options": [
+            "Iyak va bo'yin mushaklari",
+            "Peshona va ko'z atrof mushaklari",
+            "Burun va yuqori lab mushaklari",
+            "Yonoq va kulgi mushaklari"
+          ],
+          "correctAnswer": "Iyak va bo'yin mushaklari",
+          "sortOrder": 4
+        }
+      ]
+    },
+    {
+      "id": "tooth-surfaces",
+      "title": "Bo'yin mushaklari",
+      "description": "Bo'yin mushaklarini lotincha nomlari va o'zbekcha ma'nolari bilan bo'limlar asosida o'rganing.",
+      "glyph": "BM",
+      "palette": {
+        "from": "#E0F2FE",
+        "to": "#E0E7FF",
+        "highlight": "#BFDBFE",
+        "ink": "#1E3A8A"
+      },
+      "image": "/rasm/boyin.png",
+      "fallbackImage": "/rasm/boyin.png",
+      "sortOrder": 7,
+      "learnItems": [
+        {
+          "id": "tooth-surfaces-item-1",
+          "title": "Yonoq va kulgi mushaklari",
+          "description": "Asosiy atamalar:\nM. zygomaticus major - katta yonoq mushagi\nM. risorius - kulgich mushagi",
+          "quizQuestion": "M. zygomaticus major va M. risorius qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=zygomaticus%20risorius%20facial%20muscles&v=801",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "zygomaticus risorius facial muscles"
+          ],
+          "sortOrder": 0
+        },
+        {
+          "id": "tooth-surfaces-item-2",
+          "title": "Digastrik mushak qismlari",
+          "description": "Asosiy atamalar:\nM. digastricus, venter anterior - ikki qorinchali mushakning oldingi qismi\nM. digastricus, venter posterior - ikki qorinchali mushakning orqa qismi",
+          "quizQuestion": "M. digastricusning oldingi va orqa qismi qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=digastric%20muscle%20anatomy&v=802",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "digastric muscle anatomy"
+          ],
+          "sortOrder": 1
+        },
+        {
+          "id": "tooth-surfaces-item-3",
+          "title": "Tilosti mushaklari",
+          "description": "Asosiy atamalar:\nM. mylohyoideus - pastki jag'-tilosti mushagi\nM. stylohyoideus - bigizsimon-tilosti mushagi\nM. sternohyoideus - to'sh-tilosti mushagi\nM. omohyoideus, venter superior - kurak-tilosti mushagi, yuqori qorin qismi",
+          "quizQuestion": "M. mylohyoideus, M. stylohyoideus, M. sternohyoideus va M. omohyoideus qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=hyoid%20muscles%20anatomy&v=803",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "hyoid muscles anatomy"
+          ],
+          "sortOrder": 2
+        },
+        {
+          "id": "tooth-surfaces-item-4",
+          "title": "Asosiy bo'yin mushaklari",
+          "description": "Asosiy atamalar:\nM. masseter - chaynov mushagi\nM. sternocleidomastoideus - to'sh-o'mrov-so'rg'ichsimon mushak\nM. trapezius - trapetsiyasimon mushak",
+          "quizQuestion": "M. masseter, M. sternocleidomastoideus va M. trapezius qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=masseter%20sternocleidomastoid%20trapezius%20anatomy&v=804",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "masseter sternocleidomastoid trapezius anatomy"
+          ],
+          "sortOrder": 3
+        },
+        {
+          "id": "tooth-surfaces-item-5",
+          "title": "Teri osti va hiqildoq mushaklari",
+          "description": "Asosiy atamalar:\nPlatysma - bo'yinning teri osti mushagi\nM. cricothyroideus - tumshuqsimon-qalqonsimon tog'ay mushagi",
+          "quizQuestion": "Platysma va M. cricothyroideus qaysi bo'limda berilgan?",
+          "image": "https://www.sourcesplash.com/i/random?w=880&h=620&q=platysma%20cricothyroid%20muscle%20anatomy&v=805",
+          "fallbackImage": null,
+          "imageKeywords": [
+            "platysma cricothyroid muscle anatomy"
+          ],
+          "sortOrder": 4
+        }
+      ],
+      "quizQuestions": [
+        {
+          "id": "tooth-surfaces-quiz-1",
+          "topicId": "tooth-surfaces",
+          "topicTitle": "Bo'yin mushaklari",
+          "learningItemId": "tooth-surfaces-item-1",
+          "question": "M. zygomaticus major va M. risorius qaysi bo'limda berilgan?",
+          "options": [
+            "Yonoq va kulgi mushaklari",
+            "Digastrik mushak qismlari",
+            "Tilosti mushaklari",
+            "Asosiy bo'yin mushaklari"
+          ],
+          "correctAnswer": "Yonoq va kulgi mushaklari",
+          "sortOrder": 0
+        },
+        {
+          "id": "tooth-surfaces-quiz-2",
+          "topicId": "tooth-surfaces",
+          "topicTitle": "Bo'yin mushaklari",
+          "learningItemId": "tooth-surfaces-item-2",
+          "question": "M. digastricusning oldingi va orqa qismi qaysi bo'limda berilgan?",
+          "options": [
+            "Tilosti mushaklari",
+            "Digastrik mushak qismlari",
+            "Teri osti va hiqildoq mushaklari",
+            "Asosiy bo'yin mushaklari"
+          ],
+          "correctAnswer": "Digastrik mushak qismlari",
+          "sortOrder": 1
+        },
+        {
+          "id": "tooth-surfaces-quiz-3",
+          "topicId": "tooth-surfaces",
+          "topicTitle": "Bo'yin mushaklari",
+          "learningItemId": "tooth-surfaces-item-3",
+          "question": "M. mylohyoideus, M. stylohyoideus, M. sternohyoideus va M. omohyoideus qaysi bo'limda berilgan?",
+          "options": [
+            "Teri osti va hiqildoq mushaklari",
+            "Yonoq va kulgi mushaklari",
+            "Tilosti mushaklari",
+            "Asosiy bo'yin mushaklari"
+          ],
+          "correctAnswer": "Tilosti mushaklari",
+          "sortOrder": 2
+        },
+        {
+          "id": "tooth-surfaces-quiz-4",
+          "topicId": "tooth-surfaces",
+          "topicTitle": "Bo'yin mushaklari",
+          "learningItemId": "tooth-surfaces-item-4",
+          "question": "M. masseter, M. sternocleidomastoideus va M. trapezius qaysi bo'limda berilgan?",
+          "options": [
+            "Digastrik mushak qismlari",
+            "Asosiy bo'yin mushaklari",
+            "Teri osti va hiqildoq mushaklari",
+            "Yonoq va kulgi mushaklari"
+          ],
+          "correctAnswer": "Asosiy bo'yin mushaklari",
+          "sortOrder": 3
+        },
+        {
+          "id": "tooth-surfaces-quiz-5",
+          "topicId": "tooth-surfaces",
+          "topicTitle": "Bo'yin mushaklari",
+          "learningItemId": "tooth-surfaces-item-5",
+          "question": "Platysma va M. cricothyroideus qaysi bo'limda berilgan?",
+          "options": [
+            "Teri osti va hiqildoq mushaklari",
+            "Yonoq va kulgi mushaklari",
+            "Digastrik mushak qismlari",
+            "Tilosti mushaklari"
+          ],
+          "correctAnswer": "Teri osti va hiqildoq mushaklari",
+          "sortOrder": 4
+        }
+      ]
+    }
+  ]
+}

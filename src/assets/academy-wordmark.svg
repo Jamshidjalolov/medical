@@ -1,0 +1,48 @@
+<svg width="860" height="154" viewBox="0 0 860 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="860" height="154" rx="34" fill="url(#surface)" />
+  <rect x="1.5" y="1.5" width="857" height="151" rx="32.5" stroke="url(#border)" />
+  <g filter="url(#shadow)">
+    <rect x="20" y="21" width="112" height="112" rx="30" fill="url(#markBg)" />
+    <rect x="44" y="44" width="64" height="58" rx="20" fill="white" fill-opacity="0.98" />
+    <path d="M54 58C54 55.7909 55.7909 54 58 54H74V92H58C55.7909 92 54 90.2091 54 88V58Z" fill="#EAF3FF" />
+    <path d="M98 58C98 55.7909 96.2091 54 94 54H78V92H94C96.2091 92 98 90.2091 98 88V58Z" fill="#F6FAFF" />
+    <path d="M76 54V92" stroke="#C9D9F4" stroke-width="2" stroke-linecap="round" />
+    <path d="M61 63H70" stroke="#99B4DD" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M61 70H70" stroke="#99B4DD" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M82 63H91" stroke="#99B4DD" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M82 70H91" stroke="#99B4DD" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M76 63V86" stroke="#F3C55C" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="76" cy="59" r="4.2" fill="#F3C55C" />
+    <circle cx="99" cy="44" r="12" fill="#F3C55C" />
+    <path d="M99 38.5V49.5" stroke="#0B1D49" stroke-width="3.6" stroke-linecap="round" />
+    <path d="M93.5 44H104.5" stroke="#0B1D49" stroke-width="3.6" stroke-linecap="round" />
+  </g>
+  <text x="162" y="60" fill="#0B1D49" font-family="Georgia, 'Palatino Linotype', serif" font-size="38" font-weight="700">Lotin tili va</text>
+  <text x="162" y="104" fill="#18448E" font-family="Georgia, 'Palatino Linotype', serif" font-size="42" font-weight="700">tibbiy terminologiya</text>
+  <text x="162" y="129" fill="#5F6F86" font-family="'Segoe UI', Aptos, sans-serif" font-size="13" font-weight="600" letter-spacing="0.12em">LOTIN | TERMINOLOGIYA | SERTIFIKAT</text>
+  <defs>
+    <filter id="shadow" x="14" y="17" width="124" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="2" />
+      <feGaussianBlur stdDeviation="3" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0431373 0 0 0 0 0.113725 0 0 0 0 0.286275 0 0 0 0.18 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+    </filter>
+    <linearGradient id="surface" x1="24" y1="18" x2="816" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#F5F9FF" />
+    </linearGradient>
+    <linearGradient id="border" x1="30" y1="20" x2="830" y2="134" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDE8F8" />
+      <stop offset="1" stop-color="#F0DDA8" />
+    </linearGradient>
+    <linearGradient id="markBg" x1="32" y1="22" x2="122" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1D49" />
+      <stop offset="0.48" stop-color="#17418F" />
+      <stop offset="1" stop-color="#0C8B9B" />
+    </linearGradient>
+  </defs>
+</svg>

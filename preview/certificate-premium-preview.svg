@@ -1,0 +1,104 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1480" y2="1020" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="0.52" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF5FF"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="320" y1="180" x2="1290" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E7B1"/>
+      <stop offset="0.48" stop-color="#D9B76A"/>
+      <stop offset="1" stop-color="#B99037"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="540" y1="110" x2="1020" y2="970" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1E4A"/>
+      <stop offset="1" stop-color="#1B4B91"/>
+    </linearGradient>
+    <filter id="shadow" x="170" y="95" width="1260" height="910" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="28"/>
+      <feGaussianBlur stdDeviation="30"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.129412 0 0 0 0 0.290196 0 0 0 0.18 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1100" fill="#F4F8FD"/>
+  <circle cx="238" cy="188" r="160" fill="#DBEAFE" fill-opacity="0.65"/>
+  <circle cx="1400" cy="182" r="124" fill="#FDE68A" fill-opacity="0.35"/>
+  <circle cx="1330" cy="920" r="190" fill="#BFDBFE" fill-opacity="0.42"/>
+
+  <g filter="url(#shadow)">
+    <rect x="230" y="130" width="1140" height="790" rx="40" fill="url(#bg)"/>
+    <rect x="255" y="155" width="1090" height="740" rx="30" stroke="url(#gold)" stroke-width="3"/>
+    <rect x="285" y="185" width="1030" height="680" rx="24" stroke="#D9E4F3" stroke-width="1.5"/>
+  </g>
+
+  <path d="M305 215H1295" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M305 835H1295" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" opacity="0.45"/>
+
+  <g transform="translate(710 210)">
+    <rect width="180" height="86" rx="28" fill="#FFFFFF" fill-opacity="0.96" stroke="#D8E6F6"/>
+    <rect x="14" y="13" width="60" height="60" rx="18" fill="url(#navy)"/>
+    <path d="M32 47C32 36.5 40.5 28 51 28C61.5 28 70 36.5 70 47V53C70 63.5 61.5 72 51 72C40.5 72 32 63.5 32 53V47Z" fill="#F1F7FF"/>
+    <path d="M42 38H60V50L51 46L42 50V38Z" fill="#E0B95A"/>
+    <path d="M42 55H60" stroke="#1B4B91" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M42 61H57" stroke="#1B4B91" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="92" y="38" fill="#0F1E4A" font-family="Georgia, serif" font-size="20" font-weight="700">TA'LIM</text>
+    <text x="92" y="59" fill="#2B5A9C" font-family="Georgia, serif" font-size="20" font-weight="700">TEST</text>
+    <text x="92" y="76" fill="#6B7D97" font-family="Aptos, Segoe UI, sans-serif" font-size="10" font-weight="700" letter-spacing="0.22em">ACADEMY CERT</text>
+  </g>
+
+  <text x="800" y="360" text-anchor="middle" fill="#B79039" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.42em">CERTIFICATE OF ACHIEVEMENT</text>
+  <text x="800" y="420" text-anchor="middle" fill="#10214B" font-family="Georgia, serif" font-size="32" font-weight="700">Ta'limiy Test Dasturi Sertifikati</text>
+  <text x="800" y="468" text-anchor="middle" fill="#66758D" font-family="Aptos, Segoe UI, sans-serif" font-size="22">Mazkur sertifikat quyidagi ishtirokchiga tantanali ravishda topshiriladi</text>
+
+  <text x="800" y="566" text-anchor="middle" fill="#0F1E4A" font-family="Georgia, serif" font-size="60" font-weight="700">Jamshid Jalolov</text>
+  <path d="M520 590H1080" stroke="#D7B66A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <rect x="595" y="620" width="410" height="58" rx="29" fill="#FFF8E7" stroke="#E6D3A0"/>
+  <text x="800" y="657" text-anchor="middle" fill="#926C26" font-family="Aptos, Segoe UI, sans-serif" font-size="22" font-weight="700">A'lo daraja • Yakuniy natija 92%</text>
+
+  <text x="800" y="724" text-anchor="middle" fill="#42526A" font-family="Aptos, Segoe UI, sans-serif" font-size="24">
+    Ta'limiy test dasturini muvaffaqiyatli yakunladi va barcha natijalari
+  </text>
+  <text x="800" y="758" text-anchor="middle" fill="#42526A" font-family="Aptos, Segoe UI, sans-serif" font-size="24">
+    tizimda qayd etilgan holda ushbu premium sertifikat bilan taqdirlandi.
+  </text>
+
+  <rect x="336" y="782" width="230" height="82" rx="26" fill="#F8FBFF" stroke="#D9E5F2"/>
+  <text x="376" y="816" fill="#75859C" font-family="Aptos, Segoe UI, sans-serif" font-size="12" font-weight="700" letter-spacing="0.22em">ISSUE DATE</text>
+  <text x="376" y="848" fill="#0F1E4A" font-family="Georgia, serif" font-size="28" font-weight="700">24 Mart 2026</text>
+
+  <rect x="685" y="782" width="230" height="82" rx="26" fill="#F8FBFF" stroke="#D9E5F2"/>
+  <text x="725" y="816" fill="#75859C" font-family="Aptos, Segoe UI, sans-serif" font-size="12" font-weight="700" letter-spacing="0.22em">CERTIFICATE ID</text>
+  <text x="725" y="848" fill="#0F1E4A" font-family="Georgia, serif" font-size="28" font-weight="700">EDU-20260324-4812</text>
+
+  <g transform="translate(1020 760)">
+    <rect x="0" y="0" width="218" height="110" rx="26" fill="#FFFFFF" stroke="#D9E5F2"/>
+    <rect x="24" y="22" width="68" height="68" rx="14" fill="#FAFCFF" stroke="#D5E2F1"/>
+    <path d="M34 32H82V80H34V32Z" fill="#0F1E4A"/>
+    <path d="M40 38H46V44H40V38ZM52 38H58V44H52V38ZM64 38H70V44H64V38ZM76 38H82V44H76V38ZM40 50H46V56H40V50ZM52 50H58V56H52V50ZM64 50H70V56H64V50ZM76 50H82V56H76V50ZM40 62H46V68H40V62ZM52 62H58V68H52V62ZM64 62H70V68H64V62ZM76 62H82V68H76V62Z" fill="#F1F6FF"/>
+    <path d="M46 44H52V50H46V44ZM58 56H64V62H58V56ZM70 44H76V50H70V44ZM46 68H52V74H46V68ZM70 68H76V74H70V68Z" fill="#D7B665"/>
+    <text x="108" y="44" fill="#7A899F" font-family="Aptos, Segoe UI, sans-serif" font-size="11" font-weight="700" letter-spacing="0.18em">VERIFY</text>
+    <text x="108" y="68" fill="#0F1E4A" font-family="Georgia, serif" font-size="22" font-weight="700">QR Kod</text>
+    <text x="108" y="88" fill="#61738C" font-family="Aptos, Segoe UI, sans-serif" font-size="13">Serial va foiz</text>
+  </g>
+
+  <g transform="translate(336 912)">
+    <text x="0" y="0" fill="#7A899F" font-family="Aptos, Segoe UI, sans-serif" font-size="12" font-weight="700" letter-spacing="0.22em">ACADEMIC DIRECTOR</text>
+    <path d="M0 42H250" stroke="#CAD7E6" stroke-width="2"/>
+    <text x="0" y="72" fill="#0F1E4A" font-family="Georgia, serif" font-size="28" font-weight="700">M. Karimov</text>
+  </g>
+
+  <g transform="translate(1010 900)">
+    <circle cx="118" cy="36" r="50" fill="#FFF8E7" stroke="#D9B76A" stroke-width="4"/>
+    <circle cx="118" cy="36" r="33" stroke="#143E7A" stroke-width="3" stroke-dasharray="4 7"/>
+    <text x="118" y="26" text-anchor="middle" fill="#143E7A" font-family="Aptos, Segoe UI, sans-serif" font-size="12" font-weight="700">OFFICIAL</text>
+    <text x="118" y="45" text-anchor="middle" fill="#B79039" font-family="Georgia, serif" font-size="20" font-weight="700">SEAL</text>
+    <text x="118" y="62" text-anchor="middle" fill="#143E7A" font-family="Aptos, Segoe UI, sans-serif" font-size="10" font-weight="700">EDU TEST</text>
+  </g>
+</svg>
