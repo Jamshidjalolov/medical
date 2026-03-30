@@ -12,7 +12,7 @@
       name="keywords"
       content="lotin tili, tibbiy terminologiya, test, sertifikat, tibbiyot, quiz, ta'lim platformasi"
     />
-    <link rel="canonical" href="%VITE_SITE_URL%" />
+    <link rel="canonical" href="/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="uz_UZ" />
@@ -22,9 +22,9 @@
       property="og:description"
       content="Lotin tili, tibbiy terminologiya, interaktiv mavzular, testlar va sertifikat olish uchun o'quv platformasi."
     />
-    <meta property="og:url" content="%VITE_SITE_URL%" />
-    <meta property="og:image" content="%VITE_SITE_URL%/og-cover.png" />
-    <meta property="og:image:secure_url" content="%VITE_SITE_URL%/og-cover.png" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/og-cover.png" />
+    <meta property="og:image:secure_url" content="/og-cover.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1366" />
     <meta property="og:image:height" content="768" />
@@ -36,7 +36,7 @@
       name="twitter:description"
       content="Lotin tili, tibbiy terminologiya, interaktiv mavzular, testlar va sertifikat olish uchun o'quv platformasi."
     />
-    <meta name="twitter:image" content="%VITE_SITE_URL%/og-cover.png" />
+    <meta name="twitter:image" content="/og-cover.png" />
     <meta name="twitter:image:alt" content="Lotin tili va tibbiy terminologiya sertifikat preview rasmi" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -45,6 +45,18 @@
   </head>
   <body>
     <div id="root"></div>
+    <script type="module">
+      const configuredSiteUrl = (import.meta.env.VITE_SITE_URL ?? "").trim().replace(/\/+$/, "");
+      const siteOrigin = configuredSiteUrl || window.location.origin;
+      const canonicalUrl = `${siteOrigin}${window.location.pathname}`;
+      const ogImageUrl = `${siteOrigin}/og-cover.png`;
+
+      document.querySelector('link[rel="canonical"]')?.setAttribute("href", canonicalUrl);
+      document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonicalUrl);
+      document.querySelector('meta[property="og:image"]')?.setAttribute("content", ogImageUrl);
+      document.querySelector('meta[property="og:image:secure_url"]')?.setAttribute("content", ogImageUrl);
+      document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", ogImageUrl);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
