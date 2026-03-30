@@ -24,7 +24,7 @@ function tabClass(isActive) {
 export default function RegisterPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, language, registerUser, loginUser, loginWithGoogle, topics, certificateExamConfig, isAuthPending } =
+  const { user, language, registerUser, loginUser, loginWithGoogle, topics, certificateExamConfig, isAuthPending, isFrontendOnlyMode } =
     useAppContext();
   const [formState, setFormState] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -222,6 +222,12 @@ export default function RegisterPage() {
               <h2 className="section-title">{authMeta.title}</h2>
               <p className="section-copy">{authMeta.description}</p>
             </div>
+
+            {isFrontendOnlyMode ? (
+              <div className="rounded-[20px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-800">
+                {tx("Frontend-only rejim yoqilgan. Ro'yxatdan o'tish, kirish va progress shu brauzerning local storage xotirasida saqlanadi.")}
+              </div>
+            ) : null}
           </div>
 
           <form className="mt-8 space-y-5" onSubmit={handleSubmit}>

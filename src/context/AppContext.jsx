@@ -1,10 +1,18 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { initialTopics } from "../data/topics";
 import { ApiError, apiRequest, buildApiUrl } from "../utils/api";
 import { logoutFirebaseSession, signInWithGooglePopup } from "../utils/firebase";
 import { readStorage, removeStorage, writeStorage } from "../utils/localStorage";
+import { buildTopicBreakdown, calculateScore, createCertificateSerial, pickRandomItems } from "../utils/quiz";
 
 const AUTH_STORAGE_KEY = "eduvista-auth-token";
 const LANGUAGE_STORAGE_KEY = "eduvista-language";
+const LOCAL_USERS_STORAGE_KEY = "eduvista-local-users";
+const LOCAL_PROGRESS_STORAGE_KEY = "eduvista-local-progress";
+const FRONTEND_ONLY_MODE =
+  String(import.meta.env.VITE_FRONTEND_ONLY ?? "")
+    .trim()
+    .toLowerCase() === "true" || !String(import.meta.env.VITE_API_BASE_URL ?? "").trim();
 const certificateExamConfig = {
   questionCount: 50,
   passingScore: 70
@@ -15,21 +23,28 @@ const quizThresholds = {
   certificate: certificateExamConfig.passingScore
 };
 
-const defaultProgressState = {
-  reviewedTopics: [],
-  completedTopics: [],
-  completedLearningItemsByTopic: {},
-  topicQuizResults: {},
-  certificateExamResult: null,
-  generatedCertificate: null,
-  certificateHistory: []
-};
+function createDefaultProgressState() {
+  return {
+    reviewedTopics: [],
+    completedTopics: [],
+    completedLearningItemsByTopic: {},
+    topicQuizResults: {},
+    certificateExamResult: null,
+    generatedCertificate: null,
+    certificateHistory: []
+  };
+}
 
-const defaultAdminState = {
-  adminTopics: [],
-  registeredUsers: [],
-  certificateRecords: []
-};
+function createDefaultAdminState() {
+  return {
+    adminTopics: [],
+    registeredUsers: [],
+    certificateRecords: []
+  };
+}
+
+const defaultProgressState = createDefaultProgressState();
+const defaultAdminState = createDefaultAdminState();
 
 const AppContext = createContext(null);
 
@@ -96,6 +111,8 @@ function normalizeTopic(topic) {
 function normalizeTopics(topics) {
   return sortBySortOrder(topics).map(normalizeTopic);
 }
+
+const LOCAL_TOPICS = normalizeTopics(initialTopics);
 
 function normalizeUser(user) {
   if (!user) {
@@ -241,13 +258,91 @@ function normalizeAdminCertificates(certificates, users) {
   });
 }
 
+function createLocalAuthToken(userId) {
+  return `local:${userId}`;
+}
+
+function parseLocalAuthToken(token) {
+  const rawValue = String(token ?? "");
+  return rawValue.startsWith("local:") ? rawValue.slice(6) : "";
+}
+
+function readLocalUsers() {
+  const users = readStorage(LOCAL_USERS_STORAGE_KEY, []);
+  return Array.isArray(users) ? users : [];
+}
+
+function writeLocalUsers(users) {
+  writeStorage(LOCAL_USERS_STORAGE_KEY, users);
+}
+
+function toPublicLocalUser(user) {
+  if (!user) {
+    return null;
+  }
+
+  const { password: _password, ...safeUser } = user;
+  return normalizeUser(safeUser);
+}
+
+function readLocalProgressMap() {
+  const value = readStorage(LOCAL_PROGRESS_STORAGE_KEY, {});
+  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
+function readLocalUserProgress(userId) {
+  if (!userId) {
+    return normalizeProgress(createDefaultProgressState());
+  }
+
+  const progressMap = readLocalProgressMap();
+  return normalizeProgress(progressMap[userId] ?? createDefaultProgressState());
+}
+
+function writeLocalUserProgress(userId, progress) {
+  if (!userId) {
+    return;
+  }
+
+  const progressMap = readLocalProgressMap();
+  progressMap[userId] = normalizeProgress(progress);
+  writeStorage(LOCAL_PROGRESS_STORAGE_KEY, progressMap);
+}
+
+function createLocalUserRecord(payload) {
+  const timestamp = Date.now();
+  const firstName = String(payload?.firstName ?? "").trim();
+  const lastName = String(payload?.lastName ?? "").trim();
+  const email = String(payload?.email ?? "")
+    .trim()
+    .toLowerCase();
+
+  return {
+    id: `local-user-${timestamp}-${Math.floor(1000 + Math.random() * 9000)}`,
+    firstName,
+    lastName,
+    fullName: `${firstName} ${lastName}`.trim(),
+    email,
+    password: String(payload?.password ?? ""),
+    roles: ["user"],
+    isActive: true,
+    avatarUrl: "",
+    registeredAt: new Date(timestamp).toISOString(),
+    lastLoginAt: new Date(timestamp).toISOString()
+  };
+}
+
+function createBackendOnlyError() {
+  return new Error("Bu amal uchun backend deploy qilinishi kerak.");
+}
+
 export function AppProvider({ children }) {
   const [language, setLanguageState] = useState(() => readStorage(LANGUAGE_STORAGE_KEY, "uz"));
   const [authToken, setAuthToken] = useState(() => readStorage(AUTH_STORAGE_KEY, ""));
   const [user, setUser] = useState(null);
-  const [topics, setTopics] = useState([]);
-  const [progressState, setProgressState] = useState(defaultProgressState);
-  const [adminState, setAdminState] = useState(defaultAdminState);
+  const [topics, setTopics] = useState(() => (FRONTEND_ONLY_MODE ? LOCAL_TOPICS : []));
+  const [progressState, setProgressState] = useState(() => createDefaultProgressState());
+  const [adminState, setAdminState] = useState(() => createDefaultAdminState());
   const [isAuthPending, setIsAuthPending] = useState(false);
   const [isAppReady, setIsAppReady] = useState(false);
   const [isTopicsLoading, setIsTopicsLoading] = useState(false);
@@ -256,10 +351,26 @@ export function AppProvider({ children }) {
   const topicLookup = Object.fromEntries(topics.map((topic) => [topic.id, topic]));
   const allCertificateQuestions = topics.flatMap((topic) => topic.quizQuestions);
 
+  function getLocalUserId(nextToken = authToken) {
+    return parseLocalAuthToken(nextToken) || String(user?.id ?? "");
+  }
+
+  function persistLocalProgress(nextProgress, nextUserId = getLocalUserId()) {
+    const normalizedProgress = normalizeProgress(nextProgress);
+    setProgressState(normalizedProgress);
+    writeLocalUserProgress(nextUserId, normalizedProgress);
+    return normalizedProgress;
+  }
+
   async function refreshTopics() {
     setIsTopicsLoading(true);
 
     try {
+      if (FRONTEND_ONLY_MODE) {
+        setTopics(LOCAL_TOPICS);
+        return LOCAL_TOPICS;
+      }
+
       const data = await apiRequest("/topics?includeDetails=true");
       const normalizedTopics = normalizeTopics(data);
       setTopics(normalizedTopics);
@@ -270,9 +381,24 @@ export function AppProvider({ children }) {
   }
 
   async function refreshProgress(nextToken = authToken) {
+    if (FRONTEND_ONLY_MODE) {
+      const nextUserId = getLocalUserId(nextToken);
+
+      if (!nextUserId) {
+        const emptyProgress = createDefaultProgressState();
+        setProgressState(emptyProgress);
+        return emptyProgress;
+      }
+
+      const nextProgress = readLocalUserProgress(nextUserId);
+      setProgressState(nextProgress);
+      return nextProgress;
+    }
+
     if (!nextToken) {
-      setProgressState(defaultProgressState);
-      return defaultProgressState;
+      const emptyProgress = createDefaultProgressState();
+      setProgressState(emptyProgress);
+      return emptyProgress;
     }
 
     const data = await apiRequest("/progress/me", { token: nextToken });
@@ -282,9 +408,16 @@ export function AppProvider({ children }) {
   }
 
   async function refreshAdminData(nextToken = authToken, nextUser = user) {
+    if (FRONTEND_ONLY_MODE) {
+      const emptyAdminState = createDefaultAdminState();
+      setAdminState(emptyAdminState);
+      return emptyAdminState;
+    }
+
     if (!nextToken || !nextUser?.isAdmin) {
-      setAdminState(defaultAdminState);
-      return defaultAdminState;
+      const emptyAdminState = createDefaultAdminState();
+      setAdminState(emptyAdminState);
+      return emptyAdminState;
     }
 
     setIsAdminDataLoading(true);
@@ -316,6 +449,28 @@ export function AppProvider({ children }) {
   }
 
   async function hydrateAuthenticatedState(nextToken, baseUser = null) {
+    if (FRONTEND_ONLY_MODE) {
+      const localUser = baseUser ?? toPublicLocalUser(readLocalUsers().find((item) => item.id === getLocalUserId(nextToken)));
+
+      if (!localUser) {
+        throw new Error("Mahalliy foydalanuvchi topilmadi.");
+      }
+
+      const normalizedUser = normalizeUser(localUser);
+      const normalizedProgress = readLocalUserProgress(normalizedUser.id);
+
+      setAuthToken(nextToken);
+      writeStorage(AUTH_STORAGE_KEY, nextToken);
+      setUser(normalizedUser);
+      setProgressState(normalizedProgress);
+      setAdminState(createDefaultAdminState());
+
+      return {
+        user: normalizedUser,
+        progress: normalizedProgress
+      };
+    }
+
     const [userPayload, progressPayload] = await Promise.all([
       baseUser ? Promise.resolve(baseUser) : apiRequest("/auth/me", { token: nextToken }),
       apiRequest("/progress/me", { token: nextToken })
@@ -332,7 +487,7 @@ export function AppProvider({ children }) {
     if (normalizedUser?.isAdmin) {
       await refreshAdminData(nextToken, normalizedUser);
     } else {
-      setAdminState(defaultAdminState);
+      setAdminState(createDefaultAdminState());
     }
 
     return {
@@ -344,8 +499,8 @@ export function AppProvider({ children }) {
   function clearSession() {
     setAuthToken("");
     setUser(null);
-    setProgressState(defaultProgressState);
-    setAdminState(defaultAdminState);
+    setProgressState(createDefaultProgressState());
+    setAdminState(createDefaultAdminState());
     removeStorage(AUTH_STORAGE_KEY);
   }
 
@@ -386,6 +541,25 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
+      if (FRONTEND_ONLY_MODE) {
+        const normalizedEmail = String(payload?.email ?? "")
+          .trim()
+          .toLowerCase();
+        const localUsers = readLocalUsers();
+
+        if (localUsers.some((item) => String(item.email ?? "").toLowerCase() === normalizedEmail)) {
+          return { success: false, error: "Bu email bilan foydalanuvchi allaqachon mavjud." };
+        }
+
+        const createdUser = createLocalUserRecord(payload);
+        const nextUsers = [...localUsers, createdUser];
+        writeLocalUsers(nextUsers);
+        writeLocalUserProgress(createdUser.id, createDefaultProgressState());
+
+        await hydrateAuthenticatedState(createLocalAuthToken(createdUser.id), toPublicLocalUser(createdUser));
+        return { success: true };
+      }
+
       const response = await apiRequest("/auth/register", {
         method: "POST",
         body: payload
@@ -404,6 +578,31 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
+      if (FRONTEND_ONLY_MODE) {
+        const normalizedEmail = String(email ?? "")
+          .trim()
+          .toLowerCase();
+        const localUsers = readLocalUsers();
+        const matchedUser = localUsers.find((item) => String(item.email ?? "").toLowerCase() === normalizedEmail);
+
+        if (!matchedUser || String(matchedUser.password ?? "") !== String(password ?? "")) {
+          return { success: false, error: "Email yoki parol noto'g'ri." };
+        }
+
+        if (matchedUser.isActive === false) {
+          return { success: false, error: "Hisob vaqtincha faol emas." };
+        }
+
+        const updatedUser = {
+          ...matchedUser,
+          lastLoginAt: new Date().toISOString()
+        };
+
+        writeLocalUsers(localUsers.map((item) => (item.id === updatedUser.id ? updatedUser : item)));
+        await hydrateAuthenticatedState(createLocalAuthToken(updatedUser.id), toPublicLocalUser(updatedUser));
+        return { success: true };
+      }
+
       const response = await apiRequest("/auth/login", {
         method: "POST",
         body: { email, password }
@@ -422,6 +621,10 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
+      if (FRONTEND_ONLY_MODE) {
+        return { success: false, error: "Frontend-only rejimda Google kirish backend yoki to'liq auth sozlamasini talab qiladi." };
+      }
+
       const googleSession = await signInWithGooglePopup();
       const response = await apiRequest("/auth/google", {
         method: "POST",
@@ -457,6 +660,10 @@ export function AppProvider({ children }) {
   };
 
   const updateUserRoles = async (userId, roles) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const result = await apiRequest(`/admin/users/${userId}/roles`, {
       method: "PATCH",
       token: authToken,
@@ -473,6 +680,10 @@ export function AppProvider({ children }) {
   };
 
   const updateUserStatus = async (userId, isActive) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const result = await apiRequest(`/admin/users/${userId}/status`, {
       method: "PATCH",
       token: authToken,
@@ -489,6 +700,10 @@ export function AppProvider({ children }) {
   };
 
   const deleteUserAccount = async (userId) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     await apiRequest(`/admin/users/${userId}`, {
       method: "DELETE",
       token: authToken
@@ -498,6 +713,10 @@ export function AppProvider({ children }) {
   };
 
   const deleteCertificateRecord = async (identifier) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const target =
       adminState.certificateRecords.find((certificate) => certificate.id === identifier) ??
       adminState.certificateRecords.find((certificate) => certificate.serialNumber === identifier);
@@ -515,6 +734,24 @@ export function AppProvider({ children }) {
   };
 
   const completeLearningItem = async (topicId, learningItemId) => {
+    if (FRONTEND_ONLY_MODE) {
+      const currentItemIds = new Set(progressState.completedLearningItemsByTopic[topicId] ?? []);
+      currentItemIds.add(learningItemId);
+
+      persistLocalProgress({
+        ...progressState,
+        reviewedTopics: progressState.reviewedTopics.includes(topicId)
+          ? progressState.reviewedTopics
+          : [...progressState.reviewedTopics, topicId].sort(),
+        completedLearningItemsByTopic: {
+          ...progressState.completedLearningItemsByTopic,
+          [topicId]: [...currentItemIds]
+        }
+      });
+
+      return;
+    }
+
     await apiRequest("/progress/learning-items/complete", {
       method: "POST",
       token: authToken,
@@ -539,6 +776,35 @@ export function AppProvider({ children }) {
   };
 
   const saveTopicQuizResult = async (topicId, answers) => {
+    if (FRONTEND_ONLY_MODE) {
+      const topic = topicLookup[topicId];
+      const questions = Array.isArray(topic?.quizQuestions) ? topic.quizQuestions : [];
+      const scoreMeta = calculateScore(questions, answers);
+      const result = normalizeTopicQuizResult({
+        id: `local-topic-result-${topicId}-${Date.now()}`,
+        topicId,
+        topicTitle: topic?.title ?? "",
+        answers,
+        ...scoreMeta,
+        threshold: quizThresholds.topic,
+        passed: scoreMeta.score >= quizThresholds.topic,
+        completedAt: new Date().toISOString()
+      });
+
+      persistLocalProgress({
+        ...progressState,
+        completedTopics: result.passed
+          ? [...new Set([...progressState.completedTopics, topicId])].sort()
+          : progressState.completedTopics,
+        topicQuizResults: {
+          ...progressState.topicQuizResults,
+          [topicId]: result
+        }
+      });
+
+      return result;
+    }
+
     const result = normalizeTopicQuizResult(
       await apiRequest(`/progress/topic-quizzes/${topicId}/submit`, {
         method: "POST",
@@ -562,6 +828,15 @@ export function AppProvider({ children }) {
   };
 
   const fetchCertificateExamQuestions = async (count = certificateExamConfig.questionCount) => {
+    if (FRONTEND_ONLY_MODE) {
+      const questionPool = allCertificateQuestions.length
+        ? allCertificateQuestions
+        : LOCAL_TOPICS.flatMap((topic) => topic.quizQuestions);
+      const safeCount = Math.max(1, Math.min(Number(count ?? certificateExamConfig.questionCount), questionPool.length));
+
+      return pickRandomItems(questionPool, safeCount).map((question) => normalizeQuestion(question));
+    }
+
     const query = count ? `?count=${count}` : "";
     const response = await apiRequest(`/certificates/exam/questions${query}`, { token: authToken });
 
@@ -569,6 +844,32 @@ export function AppProvider({ children }) {
   };
 
   const saveCertificateExamResult = async ({ questionIds, answers }) => {
+    if (FRONTEND_ONLY_MODE) {
+      const questionLookup = Object.fromEntries(allCertificateQuestions.map((question) => [question.id, question]));
+      const selectedQuestions = questionIds.map((questionId) => questionLookup[questionId]).filter(Boolean);
+      const scoreMeta = calculateScore(selectedQuestions, answers);
+      const attemptId = `local-attempt-${Date.now()}`;
+      const result = normalizeCertificateExamResult({
+        id: attemptId,
+        attemptId,
+        questionIds,
+        answers,
+        ...scoreMeta,
+        threshold: quizThresholds.certificate,
+        passed: scoreMeta.score >= quizThresholds.certificate,
+        breakdown: buildTopicBreakdown(selectedQuestions, answers),
+        completedAt: new Date().toISOString()
+      });
+
+      persistLocalProgress({
+        ...progressState,
+        certificateExamResult: result,
+        generatedCertificate: null
+      });
+
+      return result;
+    }
+
     const result = normalizeCertificateExamResult(
       await apiRequest("/certificates/exam/submit", {
         method: "POST",
@@ -587,6 +888,49 @@ export function AppProvider({ children }) {
   };
 
   const generateCertificate = async ({ firstName, lastName }) => {
+    if (FRONTEND_ONLY_MODE) {
+      const currentResult = progressState.certificateExamResult;
+      const attemptId = currentResult?.attemptId;
+
+      if (!attemptId || !currentResult?.passed) {
+        return null;
+      }
+
+      const existingCertificate =
+        progressState.certificateHistory.find((item) => item.attemptId === attemptId) ??
+        (progressState.generatedCertificate?.attemptId === attemptId ? progressState.generatedCertificate : null);
+
+      if (existingCertificate) {
+        return existingCertificate;
+      }
+
+      const createdCertificate = normalizeCertificate({
+        id: `local-certificate-${Date.now()}`,
+        userId: user?.id ?? getLocalUserId(),
+        attemptId,
+        serialNumber: createCertificateSerial(),
+        fullName: `${firstName} ${lastName}`.trim(),
+        score: currentResult.score,
+        total: currentResult.total,
+        correctCount: currentResult.correctCount,
+        wrongCount: currentResult.wrongCount,
+        issueDate: new Date().toISOString(),
+        achievement: {},
+        breakdown: currentResult.breakdown ?? []
+      });
+
+      persistLocalProgress({
+        ...progressState,
+        generatedCertificate: createdCertificate,
+        certificateHistory: [
+          createdCertificate,
+          ...progressState.certificateHistory.filter((item) => item.id !== createdCertificate.id)
+        ]
+      });
+
+      return createdCertificate;
+    }
+
     const attemptId = progressState.certificateExamResult?.attemptId;
 
     if (!attemptId) {
@@ -627,6 +971,10 @@ export function AppProvider({ children }) {
   }
 
   const uploadAdminImage = async (file, scope = "topics") => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     if (!file) {
       throw new Error("Rasm fayli tanlanmadi.");
     }
@@ -663,6 +1011,10 @@ export function AppProvider({ children }) {
   };
 
   const addTopic = async (payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const createdTopic = normalizeTopic(
       await apiRequest("/admin/topics", {
         method: "POST",
@@ -686,6 +1038,10 @@ export function AppProvider({ children }) {
   };
 
   const updateTopic = async (topicId, payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const targetTopic = adminState.adminTopics.find((topic) => topic.id === topicId);
 
     await apiRequest(`/admin/topics/${topicId}`, {
@@ -708,6 +1064,10 @@ export function AppProvider({ children }) {
   };
 
   const deleteTopic = async (topicId) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     await apiRequest(`/admin/topics/${topicId}`, {
       method: "DELETE",
       token: authToken
@@ -717,6 +1077,10 @@ export function AppProvider({ children }) {
   };
 
   const addLearningItem = async (topicId, payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const targetTopic = adminState.adminTopics.find((topic) => topic.id === topicId);
 
     await apiRequest(`/admin/topics/${topicId}/learning-items`, {
@@ -736,6 +1100,10 @@ export function AppProvider({ children }) {
   };
 
   const updateLearningItem = async (topicId, itemId, payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const targetTopic = adminState.adminTopics.find((topic) => topic.id === topicId);
     const targetItem = targetTopic?.learnItems.find((item) => item.id === itemId);
 
@@ -757,6 +1125,10 @@ export function AppProvider({ children }) {
   };
 
   const deleteLearningItem = async (_topicId, itemId) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     await apiRequest(`/admin/learning-items/${itemId}`, {
       method: "DELETE",
       token: authToken
@@ -766,6 +1138,10 @@ export function AppProvider({ children }) {
   };
 
   const addQuizQuestion = async (topicId, payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const targetTopic = adminState.adminTopics.find((topic) => topic.id === topicId);
 
     await apiRequest(`/admin/topics/${topicId}/questions`, {
@@ -785,6 +1161,10 @@ export function AppProvider({ children }) {
   };
 
   const updateQuizQuestion = async (topicId, questionId, payload) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     const targetTopic = adminState.adminTopics.find((topic) => topic.id === topicId);
     const targetQuestion = targetTopic?.quizQuestions.find((question) => question.id === questionId);
 
@@ -805,6 +1185,10 @@ export function AppProvider({ children }) {
   };
 
   const deleteQuizQuestion = async (_topicId, questionId) => {
+    if (FRONTEND_ONLY_MODE) {
+      throw createBackendOnlyError();
+    }
+
     await apiRequest(`/admin/questions/${questionId}`, {
       method: "DELETE",
       token: authToken
@@ -819,6 +1203,7 @@ export function AppProvider({ children }) {
         language,
         setLanguage,
         user,
+        isFrontendOnlyMode: FRONTEND_ONLY_MODE,
         authToken,
         isAppReady,
         isAuthPending,
