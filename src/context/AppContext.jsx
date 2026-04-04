@@ -356,9 +356,7 @@ export function AppProvider({ children }) {
   const [language, setLanguageState] = useState(() => readStorage(LANGUAGE_STORAGE_KEY, "uz"));
   const [authToken, setAuthToken] = useState(() => readStorage(AUTH_STORAGE_KEY, ""));
   const [user, setUser] = useState(null);
-  const [isFrontendOnlyMode, setIsFrontendOnlyMode] = useState(
-    () => FRONTEND_ONLY_MODE || Boolean(parseLocalAuthToken(readStorage(AUTH_STORAGE_KEY, "")))
-  );
+  const [isFrontendOnlyMode, setIsFrontendOnlyMode] = useState(FRONTEND_ONLY_MODE);
   const [topics, setTopics] = useState(() => (FRONTEND_ONLY_MODE ? LOCAL_TOPICS : []));
   const [progressState, setProgressState] = useState(() => createDefaultProgressState());
   const [adminState, setAdminState] = useState(() => createDefaultAdminState());
@@ -462,6 +460,7 @@ export function AppProvider({ children }) {
 
       const data = await apiRequest("/topics?includeDetails=true");
       const normalizedTopics = normalizeTopics(data);
+      setIsFrontendOnlyMode(false);
       setTopics(normalizedTopics);
       return normalizedTopics;
     } catch (error) {
@@ -477,7 +476,7 @@ export function AppProvider({ children }) {
   }
 
   async function refreshProgress(nextToken = authToken) {
-    if (isFrontendOnlyMode || parseLocalAuthToken(nextToken)) {
+    if (FRONTEND_ONLY_MODE || parseLocalAuthToken(nextToken)) {
       const nextUserId = getLocalUserId(nextToken);
 
       if (!nextUserId) {
@@ -500,6 +499,7 @@ export function AppProvider({ children }) {
     try {
       const data = await apiRequest("/progress/me", { token: nextToken });
       const normalizedProgress = normalizeProgress(data);
+      setIsFrontendOnlyMode(false);
       setProgressState(normalizedProgress);
       return normalizedProgress;
     } catch (error) {
@@ -573,7 +573,7 @@ export function AppProvider({ children }) {
   }
 
   async function hydrateAuthenticatedState(nextToken, baseUser = null) {
-    if (isFrontendOnlyMode || parseLocalAuthToken(nextToken)) {
+    if (FRONTEND_ONLY_MODE || parseLocalAuthToken(nextToken)) {
       const localUser = baseUser ?? toPublicLocalUser(readLocalUsers().find((item) => item.id === getLocalUserId(nextToken)));
 
       if (!localUser) {
@@ -603,6 +603,7 @@ export function AppProvider({ children }) {
     const normalizedUser = normalizeUser(userPayload);
     const normalizedProgress = normalizeProgress(progressPayload);
 
+    setIsFrontendOnlyMode(false);
     setAuthToken(nextToken);
     writeStorage(AUTH_STORAGE_KEY, nextToken);
     setUser(normalizedUser);
@@ -621,6 +622,7 @@ export function AppProvider({ children }) {
   }
 
   function clearSession() {
+    setIsFrontendOnlyMode(FRONTEND_ONLY_MODE);
     setAuthToken("");
     setUser(null);
     setProgressState(createDefaultProgressState());
@@ -633,6 +635,11 @@ export function AppProvider({ children }) {
 
     async function bootstrap() {
       try {
+        if (parseLocalAuthToken(authToken)) {
+          activateFrontendOnlyMode();
+          return;
+        }
+
         await refreshTopics();
 
         if (authToken) {
@@ -667,7 +674,7 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (isFrontendOnlyMode) {
+      if (FRONTEND_ONLY_MODE) {
         return await registerLocalUser(payload);
       }
 
@@ -694,7 +701,7 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (isFrontendOnlyMode) {
+      if (FRONTEND_ONLY_MODE) {
         return await loginLocalUser({ email, password });
       }
 
@@ -721,7 +728,7 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (isFrontendOnlyMode) {
+      if (FRONTEND_ONLY_MODE) {
         return { success: false, error: "Frontend-only rejimda Google kirish backend yoki to'liq auth sozlamasini talab qiladi." };
       }
 
