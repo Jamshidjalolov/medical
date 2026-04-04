@@ -9,6 +9,8 @@ import SmartImage from "../components/SmartImage";
 import { useAppContext } from "../context/AppContext";
 import { localizeText } from "../utils/locale";
 
+const EMPTY_ITEM_IDS = [];
+
 const structuredTopicConfigs = {
   "noun-five-declensions": {
     singularLabel: "turlanish",
@@ -96,8 +98,7 @@ export default function TopicLearningPage() {
   const tx = (value) => localizeText(value, language);
   const structuredTopicConfig = topic ? structuredTopicConfigs[topic.id] : null;
   const isStructuredTopic = Boolean(structuredTopicConfig);
-  const fullItemIds = topic?.learnItems.map((item) => item.id) ?? [];
-  const completedItemIds = completedLearningItemsByTopic[topicId] ?? [];
+  const completedItemIds = completedLearningItemsByTopic[topicId] ?? EMPTY_ITEM_IDS;
   const isReviewed = Boolean(topic?.learnItems.length) && completedItemIds.length >= topic.learnItems.length;
   const [viewMode, setViewMode] = useState("overview");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -123,9 +124,11 @@ export default function TopicLearningPage() {
   };
   const topicHeroImage = topicHeroOverrides[topic.id] ?? topic.image;
   const topicHeroFallbackImage = topicHeroOverrides[topic.id] ?? topic.fallbackImage;
+  const lastResult = topicQuizResults?.[topic.id];
   const canTakeQuiz = seenIds.length === topic.learnItems.length || Boolean(lastResult) || isReviewed;
-  const lastResult = topicQuizResults[topic.id];
   const currentItem = topic.learnItems[currentIndex];
+  const fallbackQuestion = topic.quizQuestions.find((question) => question.learningItemId === currentItem?.id)?.question ?? "";
+  const currentLearningQuestion = String(currentItem?.quizQuestion ?? fallbackQuestion ?? "").trim();
   const learnUnitLabel = tx(isStructuredTopic ? structuredTopicConfig.pluralLabel : "ta karta");
   const overviewProgressLabel = isStructuredTopic
     ? `${seenIds.length} / ${topic.learnItems.length} ${tx(structuredTopicConfig.singularLabel)}`
@@ -569,6 +572,13 @@ export default function TopicLearningPage() {
                         <p className="text-lg leading-8 text-slate-700 sm:text-xl">{tx(currentStep?.text ?? "")}</p>
                       </div>
                     ) : null}
+
+                    {currentLearningQuestion ? (
+                      <div className="rounded-[26px] border border-amber-100 bg-amber-50/70 p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-700">{tx("Savol")}</p>
+                        <p className="mt-3 text-lg leading-8 text-slate-800 sm:text-xl">{tx(currentLearningQuestion)}</p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ) : (
@@ -585,6 +595,12 @@ export default function TopicLearningPage() {
                       <span className="badge-chip">{tx("Ko'rildi")}</span>
                     </div>
                     <p className="whitespace-pre-line text-sm leading-7 text-slate-600">{tx(currentItem.description)}</p>
+                    {currentLearningQuestion ? (
+                      <div className="rounded-[24px] border border-amber-100 bg-amber-50/70 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">{tx("Savol")}</p>
+                        <p className="mt-3 text-base leading-7 text-slate-800 sm:text-lg">{tx(currentLearningQuestion)}</p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               )}

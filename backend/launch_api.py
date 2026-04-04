@@ -18,7 +18,7 @@ if "BACKEND_CORS_ORIGINS" not in os.environ:
 if "DATABASE_URL" not in os.environ:
     os.environ["DATABASE_URL"] = "postgresql+psycopg://postgres:jamshid4884@localhost:5432/latin_med_terms"
 
-port = os.environ.get("API_PORT", "8000")
+port = os.environ.get("API_PORT", "8001")
 python_executable = str(venv_python) if venv_python.exists() else sys.executable
 
 raise SystemExit(

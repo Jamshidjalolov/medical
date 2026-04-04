@@ -36,11 +36,17 @@ def ensure_default_admin(db: Session) -> None:
         db.commit()
         return
 
+    admin.first_name = "Admin"
+    admin.last_name = "Panel"
+    admin.password_hash = hash_password(settings.default_admin_password)
+    admin.is_active = True
+
     roles = list(admin.roles or [])
     if "admin" not in roles:
         admin.roles = ["admin", *roles]
-        db.add(admin)
-        db.commit()
+
+    db.add(admin)
+    db.commit()
 
 
 def seed_topics(db: Session) -> None:

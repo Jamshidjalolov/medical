@@ -13,6 +13,22 @@ const FRONTEND_ONLY_MODE =
   String(import.meta.env.VITE_FRONTEND_ONLY ?? "")
     .trim()
     .toLowerCase() === "true" || !String(import.meta.env.VITE_API_BASE_URL ?? "").trim();
+
+function isNetworkUnavailableError(error) {
+  if (error instanceof ApiError) {
+    return false;
+  }
+
+  const message = String(error?.message ?? "").toLowerCase();
+  return (
+    error?.name === "TypeError" ||
+    message.includes("failed to fetch") ||
+    message.includes("networkerror") ||
+    message.includes("load failed") ||
+    message.includes("connection refused")
+  );
+}
+
 const certificateExamConfig = {
   questionCount: 50,
   passingScore: 70
@@ -340,6 +356,9 @@ export function AppProvider({ children }) {
   const [language, setLanguageState] = useState(() => readStorage(LANGUAGE_STORAGE_KEY, "uz"));
   const [authToken, setAuthToken] = useState(() => readStorage(AUTH_STORAGE_KEY, ""));
   const [user, setUser] = useState(null);
+  const [isFrontendOnlyMode, setIsFrontendOnlyMode] = useState(
+    () => FRONTEND_ONLY_MODE || Boolean(parseLocalAuthToken(readStorage(AUTH_STORAGE_KEY, "")))
+  );
   const [topics, setTopics] = useState(() => (FRONTEND_ONLY_MODE ? LOCAL_TOPICS : []));
   const [progressState, setProgressState] = useState(() => createDefaultProgressState());
   const [adminState, setAdminState] = useState(() => createDefaultAdminState());
@@ -362,11 +381,81 @@ export function AppProvider({ children }) {
     return normalizedProgress;
   }
 
+  function activateFrontendOnlyMode() {
+    setIsFrontendOnlyMode(true);
+    setTopics(LOCAL_TOPICS);
+    setAdminState(createDefaultAdminState());
+
+    const localUserId = parseLocalAuthToken(authToken);
+
+    if (localUserId) {
+      const localUser = toPublicLocalUser(readLocalUsers().find((item) => item.id === localUserId));
+
+      if (localUser) {
+        setUser(localUser);
+        setProgressState(readLocalUserProgress(localUserId));
+        return;
+      }
+    }
+
+    if (authToken) {
+      clearSession();
+      return;
+    }
+
+    setUser(null);
+    setProgressState(createDefaultProgressState());
+  }
+
+  async function registerLocalUser(payload) {
+    const normalizedEmail = String(payload?.email ?? "")
+      .trim()
+      .toLowerCase();
+    const localUsers = readLocalUsers();
+
+    if (localUsers.some((item) => String(item.email ?? "").toLowerCase() === normalizedEmail)) {
+      return { success: false, error: "Bu email bilan foydalanuvchi allaqachon mavjud." };
+    }
+
+    const createdUser = createLocalUserRecord(payload);
+    const nextUsers = [...localUsers, createdUser];
+    writeLocalUsers(nextUsers);
+    writeLocalUserProgress(createdUser.id, createDefaultProgressState());
+
+    await hydrateAuthenticatedState(createLocalAuthToken(createdUser.id), toPublicLocalUser(createdUser));
+    return { success: true };
+  }
+
+  async function loginLocalUser({ email, password }) {
+    const normalizedEmail = String(email ?? "")
+      .trim()
+      .toLowerCase();
+    const localUsers = readLocalUsers();
+    const matchedUser = localUsers.find((item) => String(item.email ?? "").toLowerCase() === normalizedEmail);
+
+    if (!matchedUser || String(matchedUser.password ?? "") !== String(password ?? "")) {
+      return { success: false, error: "Email yoki parol noto'g'ri." };
+    }
+
+    if (matchedUser.isActive === false) {
+      return { success: false, error: "Hisob vaqtincha faol emas." };
+    }
+
+    const updatedUser = {
+      ...matchedUser,
+      lastLoginAt: new Date().toISOString()
+    };
+
+    writeLocalUsers(localUsers.map((item) => (item.id === updatedUser.id ? updatedUser : item)));
+    await hydrateAuthenticatedState(createLocalAuthToken(updatedUser.id), toPublicLocalUser(updatedUser));
+    return { success: true };
+  }
+
   async function refreshTopics() {
     setIsTopicsLoading(true);
 
     try {
-      if (FRONTEND_ONLY_MODE) {
+      if (isFrontendOnlyMode) {
         setTopics(LOCAL_TOPICS);
         return LOCAL_TOPICS;
       }
@@ -375,13 +464,20 @@ export function AppProvider({ children }) {
       const normalizedTopics = normalizeTopics(data);
       setTopics(normalizedTopics);
       return normalizedTopics;
+    } catch (error) {
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+        return LOCAL_TOPICS;
+      }
+
+      throw error;
     } finally {
       setIsTopicsLoading(false);
     }
   }
 
   async function refreshProgress(nextToken = authToken) {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode || parseLocalAuthToken(nextToken)) {
       const nextUserId = getLocalUserId(nextToken);
 
       if (!nextUserId) {
@@ -401,14 +497,33 @@ export function AppProvider({ children }) {
       return emptyProgress;
     }
 
-    const data = await apiRequest("/progress/me", { token: nextToken });
-    const normalizedProgress = normalizeProgress(data);
-    setProgressState(normalizedProgress);
-    return normalizedProgress;
+    try {
+      const data = await apiRequest("/progress/me", { token: nextToken });
+      const normalizedProgress = normalizeProgress(data);
+      setProgressState(normalizedProgress);
+      return normalizedProgress;
+    } catch (error) {
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+
+        const localUserId = parseLocalAuthToken(nextToken);
+        if (localUserId) {
+          const nextProgress = readLocalUserProgress(localUserId);
+          setProgressState(nextProgress);
+          return nextProgress;
+        }
+
+        const emptyProgress = createDefaultProgressState();
+        setProgressState(emptyProgress);
+        return emptyProgress;
+      }
+
+      throw error;
+    }
   }
 
   async function refreshAdminData(nextToken = authToken, nextUser = user) {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const emptyAdminState = createDefaultAdminState();
       setAdminState(emptyAdminState);
       return emptyAdminState;
@@ -443,13 +558,22 @@ export function AppProvider({ children }) {
 
       setAdminState(nextAdminState);
       return nextAdminState;
+    } catch (error) {
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+        const emptyAdminState = createDefaultAdminState();
+        setAdminState(emptyAdminState);
+        return emptyAdminState;
+      }
+
+      throw error;
     } finally {
       setIsAdminDataLoading(false);
     }
   }
 
   async function hydrateAuthenticatedState(nextToken, baseUser = null) {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode || parseLocalAuthToken(nextToken)) {
       const localUser = baseUser ?? toPublicLocalUser(readLocalUsers().find((item) => item.id === getLocalUserId(nextToken)));
 
       if (!localUser) {
@@ -515,7 +639,9 @@ export function AppProvider({ children }) {
           await hydrateAuthenticatedState(authToken);
         }
       } catch (error) {
-        if (!isCancelled && authToken) {
+        if (!isCancelled && isNetworkUnavailableError(error)) {
+          activateFrontendOnlyMode();
+        } else if (!isCancelled && authToken) {
           clearSession();
         }
       } finally {
@@ -541,23 +667,8 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (FRONTEND_ONLY_MODE) {
-        const normalizedEmail = String(payload?.email ?? "")
-          .trim()
-          .toLowerCase();
-        const localUsers = readLocalUsers();
-
-        if (localUsers.some((item) => String(item.email ?? "").toLowerCase() === normalizedEmail)) {
-          return { success: false, error: "Bu email bilan foydalanuvchi allaqachon mavjud." };
-        }
-
-        const createdUser = createLocalUserRecord(payload);
-        const nextUsers = [...localUsers, createdUser];
-        writeLocalUsers(nextUsers);
-        writeLocalUserProgress(createdUser.id, createDefaultProgressState());
-
-        await hydrateAuthenticatedState(createLocalAuthToken(createdUser.id), toPublicLocalUser(createdUser));
-        return { success: true };
+      if (isFrontendOnlyMode) {
+        return await registerLocalUser(payload);
       }
 
       const response = await apiRequest("/auth/register", {
@@ -568,6 +679,11 @@ export function AppProvider({ children }) {
       await hydrateAuthenticatedState(response.accessToken, response.user);
       return { success: true };
     } catch (error) {
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+        return registerLocalUser(payload);
+      }
+
       return { success: false, error: error.message };
     } finally {
       setIsAuthPending(false);
@@ -578,29 +694,8 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (FRONTEND_ONLY_MODE) {
-        const normalizedEmail = String(email ?? "")
-          .trim()
-          .toLowerCase();
-        const localUsers = readLocalUsers();
-        const matchedUser = localUsers.find((item) => String(item.email ?? "").toLowerCase() === normalizedEmail);
-
-        if (!matchedUser || String(matchedUser.password ?? "") !== String(password ?? "")) {
-          return { success: false, error: "Email yoki parol noto'g'ri." };
-        }
-
-        if (matchedUser.isActive === false) {
-          return { success: false, error: "Hisob vaqtincha faol emas." };
-        }
-
-        const updatedUser = {
-          ...matchedUser,
-          lastLoginAt: new Date().toISOString()
-        };
-
-        writeLocalUsers(localUsers.map((item) => (item.id === updatedUser.id ? updatedUser : item)));
-        await hydrateAuthenticatedState(createLocalAuthToken(updatedUser.id), toPublicLocalUser(updatedUser));
-        return { success: true };
+      if (isFrontendOnlyMode) {
+        return await loginLocalUser({ email, password });
       }
 
       const response = await apiRequest("/auth/login", {
@@ -611,6 +706,11 @@ export function AppProvider({ children }) {
       await hydrateAuthenticatedState(response.accessToken, response.user);
       return { success: true };
     } catch (error) {
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+        return loginLocalUser({ email, password });
+      }
+
       return { success: false, error: error.message };
     } finally {
       setIsAuthPending(false);
@@ -621,7 +721,7 @@ export function AppProvider({ children }) {
     setIsAuthPending(true);
 
     try {
-      if (FRONTEND_ONLY_MODE) {
+      if (isFrontendOnlyMode) {
         return { success: false, error: "Frontend-only rejimda Google kirish backend yoki to'liq auth sozlamasini talab qiladi." };
       }
 
@@ -648,6 +748,11 @@ export function AppProvider({ children }) {
         return { success: false, error: "Brauzer Google oynasini blokladi. Popupga ruxsat bering." };
       }
 
+      if (!isFrontendOnlyMode && isNetworkUnavailableError(error)) {
+        activateFrontendOnlyMode();
+        return { success: false, error: "Backend bilan aloqa yo'q. Ilova local rejimga o'tdi." };
+      }
+
       return { success: false, error: error.message ?? "Google orqali kirishda xatolik yuz berdi." };
     } finally {
       setIsAuthPending(false);
@@ -660,7 +765,7 @@ export function AppProvider({ children }) {
   };
 
   const updateUserRoles = async (userId, roles) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -680,7 +785,7 @@ export function AppProvider({ children }) {
   };
 
   const updateUserStatus = async (userId, isActive) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -700,7 +805,7 @@ export function AppProvider({ children }) {
   };
 
   const deleteUserAccount = async (userId) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -713,7 +818,7 @@ export function AppProvider({ children }) {
   };
 
   const deleteCertificateRecord = async (identifier) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -734,7 +839,7 @@ export function AppProvider({ children }) {
   };
 
   const completeLearningItem = async (topicId, learningItemId) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const currentItemIds = new Set(progressState.completedLearningItemsByTopic[topicId] ?? []);
       currentItemIds.add(learningItemId);
 
@@ -776,7 +881,7 @@ export function AppProvider({ children }) {
   };
 
   const saveTopicQuizResult = async (topicId, answers) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const topic = topicLookup[topicId];
       const questions = Array.isArray(topic?.quizQuestions) ? topic.quizQuestions : [];
       const scoreMeta = calculateScore(questions, answers);
@@ -828,7 +933,7 @@ export function AppProvider({ children }) {
   };
 
   const fetchCertificateExamQuestions = async (count = certificateExamConfig.questionCount) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const questionPool = allCertificateQuestions.length
         ? allCertificateQuestions
         : LOCAL_TOPICS.flatMap((topic) => topic.quizQuestions);
@@ -844,7 +949,7 @@ export function AppProvider({ children }) {
   };
 
   const saveCertificateExamResult = async ({ questionIds, answers }) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const questionLookup = Object.fromEntries(allCertificateQuestions.map((question) => [question.id, question]));
       const selectedQuestions = questionIds.map((questionId) => questionLookup[questionId]).filter(Boolean);
       const scoreMeta = calculateScore(selectedQuestions, answers);
@@ -888,7 +993,7 @@ export function AppProvider({ children }) {
   };
 
   const generateCertificate = async ({ firstName, lastName }) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       const currentResult = progressState.certificateExamResult;
       const attemptId = currentResult?.attemptId;
 
@@ -971,7 +1076,7 @@ export function AppProvider({ children }) {
   }
 
   const uploadAdminImage = async (file, scope = "topics") => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1011,7 +1116,7 @@ export function AppProvider({ children }) {
   };
 
   const addTopic = async (payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1038,7 +1143,7 @@ export function AppProvider({ children }) {
   };
 
   const updateTopic = async (topicId, payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1064,7 +1169,7 @@ export function AppProvider({ children }) {
   };
 
   const deleteTopic = async (topicId) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1077,7 +1182,7 @@ export function AppProvider({ children }) {
   };
 
   const addLearningItem = async (topicId, payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1100,7 +1205,7 @@ export function AppProvider({ children }) {
   };
 
   const updateLearningItem = async (topicId, itemId, payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1125,7 +1230,7 @@ export function AppProvider({ children }) {
   };
 
   const deleteLearningItem = async (_topicId, itemId) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1138,7 +1243,7 @@ export function AppProvider({ children }) {
   };
 
   const addQuizQuestion = async (topicId, payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1161,7 +1266,7 @@ export function AppProvider({ children }) {
   };
 
   const updateQuizQuestion = async (topicId, questionId, payload) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1185,7 +1290,7 @@ export function AppProvider({ children }) {
   };
 
   const deleteQuizQuestion = async (_topicId, questionId) => {
-    if (FRONTEND_ONLY_MODE) {
+    if (isFrontendOnlyMode) {
       throw createBackendOnlyError();
     }
 
@@ -1203,7 +1308,7 @@ export function AppProvider({ children }) {
         language,
         setLanguage,
         user,
-        isFrontendOnlyMode: FRONTEND_ONLY_MODE,
+        isFrontendOnlyMode,
         authToken,
         isAppReady,
         isAuthPending,

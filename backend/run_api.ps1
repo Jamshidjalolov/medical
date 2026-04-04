@@ -1,7 +1,7 @@
 $backendRoot = $PSScriptRoot
 $venvPython = Join-Path $backendRoot ".venv\Scripts\python.exe"
 $systemPython = Join-Path $env:LOCALAPPDATA "Programs\Python\Python313\python.exe"
-$port = if ($env:API_PORT) { $env:API_PORT } else { "8000" }
+$port = if ($env:API_PORT) { $env:API_PORT } else { "8001" }
 
 if (Test-Path $venvPython) {
     $pythonPath = $venvPython
